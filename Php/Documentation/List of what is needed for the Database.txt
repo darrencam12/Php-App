@@ -1,0 +1,12 @@
+Client-
+
+Id
+Name
+Surname
+Email
+Mobile no.
+Address
+
+Fish
+id
+name
