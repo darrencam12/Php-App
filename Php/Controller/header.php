@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Spot The Alien Fish</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+      <div id="wrapper">
+
+          <!-- Sidebar -->
+          <div id="sidebar-wrapper">
+              <ul class="sidebar-nav">
+                  <li class="sidebar-brand">
+                      <a href="#">
+                        <Strong>Controller</Strong>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="index.php"><Strong>Home</strong></a>
+                  </li>
+                  <li>
+                      <a href="fish.php"><Strong>Fish Species</strong></a>
+                  </li>
+                  <li>
+                      <a href="report.php"><Strong>Report</strong></a>
+                  </li>
+                  <li>
+                      <a href="poster.php"><Strong>Poster</strong></a>
+                  </li>
+                  <li>
+                      <a href="about.php"><Strong>About Us</strong></a>
+                  </li>
+                  <li>
+                      <a href="sponsors.php"><Strong>Sponsors</strong></a>
+                  </li>
+                  </ul>
+          </div>
+        <!-- /#sidebar-wrapper -->
