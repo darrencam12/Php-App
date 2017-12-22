@@ -1,9 +1,8 @@
-</div>
- <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
-</div>
+
+
 <!-- /#page-content-wrapper -->
 
-</div>
+
 <!-- /#wrapper -->
 
 <!-- Bootstrap core JavaScript -->

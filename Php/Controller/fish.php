@@ -1,30 +1,83 @@
 <?php
 include("header.php");
  ?>
+
+  <h2 class="titletext"><Strong>Fish Species</strong></h2>
+
+ </div>
  <div id="page-content-wrapper">
-     <div class="container-fluid">
 
        <!-- Reports list-->
-       <div class="row">
-         <h1><Strong>Fish</strong></h1>
-       </div>
-       <div class="row">
+       <main>
+
+         <div class="container-fluid">
+
+           <div class="row">
+             <div class="col-lg-3">
+             </div>
+             <div class="col-lg-5">
+               <div id="addfish">
+                 <a href="fishSpecies.php" id="addbtn" class="btn btn-primary" role="button"><strong>Add Fish</strong></a>
+              </div>
+             </div>
+             <div class="col-lg-3">
+            </div>
+           </div>
+
+            <div class="row">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-5">
+                <div class="Fishcontainer">
+                  <img src="Images\600x400.png" class="FishImage"alt="img">
+                <div class="fishname">
+                  <h2>title</h2>
+                </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="buttoncontainer">
+                  <div class="editbutton">
+                    <button type="button" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></button>
+                  </div>
+                  <div class="deletebutton">
+                      <button type="button" id="fishbtn2"class="btn btn-default"><strong>Delete</strong></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-5">
+                <div class="Fishcontainer">
+                  <img src="Images\600x400.png" class="FishImage"alt="img">
+                <div class="fishname">
+                  <h2>title</h2>
+                </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="buttoncontainer">
+                  <div class="editbutton">
+                    <button type="button" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></button>
+                  </div>
+                  <div class="deletebutton">
+                      <button type="button" id="fishbtn2"class="btn btn-default"><strong>Delete</strong></button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
-               <div class = "col-lg-3">
+          </div>
+     </main>
 
-               </div>
-               <div class = "col-lg-5">
-                <img src="Images\600x400.png" alt="img">
-               </div>
-               <div class = "col-lg-2">
-                <a href="#">add fish</a>
-                <a href="#">delete fish</a>
-               </div>
-               <div class= "col-lg-2">
-               </div>
 
-       </div>
+
+
+
 
  <?php
  include("footer.php");

@@ -3,6 +3,11 @@ include("header.php");
  ?>
 
         <!-- Page Content -->
+
+
+         <h2 class="titletext"><Strong>Home</strong></h2>
+        </div>
+
         <div id="page-content-wrapper">
             <div class="container-fluid">
 
@@ -134,9 +139,11 @@ include("header.php");
                 </table>
                 <a href="#">View More</a>
               </div>
-
+            </div>
+          </div>
 
               <!--this is the code for the button that will open and close the menu so keep to change for menu on top IMP!!!!-->
 
             <?php
-            include("footer.php"); ?>
+            include("footer.php");
+            ?>

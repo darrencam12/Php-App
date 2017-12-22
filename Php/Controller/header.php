@@ -15,8 +15,8 @@
 
 
     <!-- Custom styles -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/simple-sidebar.css" >
+    <link  rel="stylesheet "href="css/Style.css">
 
 </head>
 
@@ -52,4 +52,10 @@
                   </li>
                   </ul>
           </div>
+
+          <div class="titleheader">
+            <div id="menubutton">
+              <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+
+            </div>
         <!-- /#sidebar-wrapper -->
