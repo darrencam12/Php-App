@@ -3,10 +3,10 @@ include("header.php");
  ?>
    <h2 class="titletext"><Strong>Posters Orders</strong></h2>
   </div>
- <div id="page-content-wrapper">
 
+ <main>
+  <div id="page-content-wrapper">
 
-         <!-- Reports list-->
       <div class="container-fluid">
          <div class="row">
               <a href="Poster.php"class="btn btn-default" id="posterbackbtn"><strong>Go Back</strong></a>
@@ -111,7 +111,7 @@ include("header.php");
         </div>
       </div>
 
-
+  </main>
  <?php
  include("footer.php");
   ?>

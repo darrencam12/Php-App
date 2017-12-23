@@ -16,7 +16,7 @@
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/simple-sidebar.css" >
-    <link  rel="stylesheet "href="css/Style.css">
+    <link rel="stylesheet" href="css/Style.css">
 
 </head>
 

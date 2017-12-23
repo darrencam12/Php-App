@@ -65,6 +65,7 @@ float: right;
 }
 #fishbtn1{
   width:100%;
+
 }
 #fishbtn2{
   width:100%;
@@ -153,4 +154,37 @@ padding-top: 30px;
 }
 #sponsorbtn2{
   width:100%;
+}
+.lblfishconatiner{
+text-align: center;
+}
+#lblfishname{
+font-weight: bold;
+padding-top: 10px;
+}
+.fishnamecontainer{
+  padding-left:30px;
+  padding-right:30px;
+}
+#fishnameeditbtn{
+  width:100%;
+}
+.fishimageeditcontainer{
+  padding-top: 130px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+#fishimageeditbtn{
+  width: 100%;
+}
+.radiobuttoncontainer{
+margin-top: 110px;
+margin-left: 150px;
+}
+.savebtn{
+
+  padding-top: 200px;
+}
+#formimage{
+  width:50%;
 }
