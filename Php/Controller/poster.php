@@ -23,7 +23,7 @@ include("header.php");
          </div>
          <div class="col-lg-3">
            <div class="editbutton">
-             <button type="button" id="posterbtn1"class="btn btn-default"><strong>Upload New Image</strong></button>
+               <input type="file" name="image"class="form-control-file"id="FormControlFileImages" placeholder="upload image"/>
            </div>
          </div>
          <div class="col-lg-1">

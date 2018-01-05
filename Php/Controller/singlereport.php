@@ -15,15 +15,15 @@ include("header.php");
             <form action="/action_page.php">
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+
               </div>
               <div class="form-group">
                 <label for="surname">Surname:</label>
-                <input type="surname" class="form-control" id="surname" placeholder="Enter surname" name="surname">
+
               </div>
               <div class="form-group">
-                <label for="email">Contact Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <label for="email">Email:</label>
+
               </div>
               <div class="form-group">
                 <label for="photo">Photo:</label>
@@ -31,33 +31,23 @@ include("header.php");
               </div>
               <div class="form-group">
                 <label for="describe">Describe Fish:</label>
-                <input type="describe" class="form-control" id="desrbice" placeholder="describe fish" name="describe">
+
               </div>
               <div class="form-group">
-                <label for="date">Enter date:</label>
-                <input id="date" type="date" >
+                <label for="date">Date:</label>
+
               </div>
               <div class="form-group">
-                <label for="describe">Describe Fish:</label>
-                <input id="date" type="date" >
+                <label for="describe">Fish Description:</label>
+
               </div>
               <div class="form-group">
-                <label for="describe">Fish is preserved:</label>
-                <label class="radio-inline">
-                    <input type="radio" name="optradio">Yes
-                   </label>
-                   <label class="radio-inline">
-                     <input type="radio" name="optradio">No
-                   </label>
+                <label for="describe">Fish preservation:</label>
+
               </div>
               <div class="form-group">
                 <label for="describe">Are you willing to donate or sell to the univercity</label>
-                <label class="radio-inline">
-                    <input type="radio" name="optradio">Yes
-                   </label>
-                   <label class="radio-inline">
-                     <input type="radio" name="optradio">No
-                   </label>
+
               </div>
 
 

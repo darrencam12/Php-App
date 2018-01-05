@@ -24,7 +24,7 @@ include("header.php");
             </div>
            </div>
 
-            <div class="row">
+            <!--<div class="row">
               <div class="col-lg-3">
               </div>
               <div class="col-lg-5">
@@ -38,37 +38,14 @@ include("header.php");
               <div class="col-lg-3">
                 <div class="buttoncontainer">
                   <div class="editbutton">
-                    <button type="button" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></button>
+                    <a href="editFish.php" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></a>
                   </div>
                   <div class="deletebutton">
                       <button type="button" id="fishbtn2"class="btn btn-default"><strong>Delete</strong></button>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-3">
-              </div>
-              <div class="col-lg-5">
-                <div class="Fishcontainer">
-                  <img src="Images\600x400.png" class="FishImage"alt="img">
-                <div class="fishname">
-                  <h2>title</h2>
-                </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="buttoncontainer">
-                  <div class="editbutton">
-                    <button type="button" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></button>
-                  </div>
-                  <div class="deletebutton">
-                      <button type="button" id="fishbtn2"class="btn btn-default"><strong>Delete</strong></button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </div> -->
 
 
           </div>
