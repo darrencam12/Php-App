@@ -3,13 +3,13 @@
 }
 
 .views .navbar-inner {
-    background-color: #019CDF;
+    background-color: #0B497C;
     color: white;
     padding: 1.5em;
 }
 
 .views .navbar-inner p {
-    font-size: 1.25em;
+    font-size: 1.4em;
     font-weight: 100;
 }
 
@@ -17,13 +17,7 @@
     background-color: white;
 }
 
-.views .subnavbar {
-    background-color: #005B94;
-    color: white;
-    padding: 1.5em;
-}
-
-.views .subnavbar h3 {
+.views .page-content h3 {
     display: flex;
 }
 
@@ -34,6 +28,11 @@
 #menu .content-block {
     color: white;
     margin-top: 10em;
+}
+
+#menu .content-block img .fsh-icn {
+    width: 50%;
+    height: 50%;
 }
 
 #menu .content-block i {
@@ -52,18 +51,43 @@
     height: 50%;
 }
 
-.fish h3 {
+.fish p {
     color: #005B94;
-    margin: 2em 1em;
+    font-size: 1.35em;
+    font-weight: 150;
+    text-align: center;
+    margin: 1.4em 1em;
+}
+
+form .row {
+    padding: 1em;
+    text-align: left;
+    font-size: 1.25em;
+    color: #0b497c;
+}
+
+form .row input {
+    background-color: white;
+    border: 1.5px solid #0b497c;
+    border-radius: 2.5px;
+    padding: .5em .5em 0 .5em;
+}
+
+form .row ::placeholder {
+    color: #005b94;
+    font-size: 1.1em;
+}
+
+form .row .button {
+    padding: 0;
+    color: white;
+    background-color: #0b497c;
+    font-size: 1em;
 }
 
 .poster_img img {
     width: 90%;
-    padding: 1em 1em;
-}
-
-form {
-    text-align: center;
+    padding: 1em 1.25em;
 }
 
 .row img {
@@ -71,9 +95,25 @@ form {
     padding: .5em 0em;
 }
 
-form .row {
-    padding: 1em;
-    text-align: left;
-    font-size: 1.25em;
+.fish_img img {
+    width: 90%;
+    padding: 1em 1.25em;
+}
+
+.fish_names {
+    color: #005B94;
+    font-size: 1.5em;
+    font-weight: 250;
+    text-align: center;
+}
+
+.fish_info {
+    color: #005B94;
+    font-size: 1.2em;
+    font-weight: 150;
+    padding: .5em;
+}
+
+.aboutinfo {
     color: #005B94;
 }
