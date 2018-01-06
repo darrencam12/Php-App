@@ -20,7 +20,21 @@ include("header.php");
             </div>
             <div class="col-lg-4">
               <div class="lblfishconatiner">
-                <input type="text" name="" value="" placeholder="fish name">
+                <input type="text" name="" value="" placeholder="Fish name">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="fishnamecontainer">
+                <button type="button" id="fishnameeditbtn"class="btn btn-default"><strong>Edit</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+              <div class="lblfishconatiner">
+                <input type="text" name="" value="" placeholder="Scientific Name">
               </div>
             </div>
             <div class="col-lg-4">
@@ -51,10 +65,13 @@ include("header.php");
           <div class="col-lg-4">
             <div class="radiobuttoncontainer">
               <div class="radio">
-                  <label><input type="radio" name="optradio">Venom</label>
+                  <input type="checkbox" name="danger" value="Car">Venomous
               </div>
               <div class="radio">
-                <label><input type="radio" name="optradio">Posinous</label>
+                <input type="checkbox" name="danger" value="Car">Posinous
+              </div>
+              <div class="radio">
+              <input type="checkbox" name="danger" value="Car">Safe
               </div>
             </div>
           </div>

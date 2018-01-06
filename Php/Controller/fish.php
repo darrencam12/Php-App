@@ -1,5 +1,10 @@
 <?php
 include("header.php");
+include("functions.php");
+include("fish-process.php");
+
+$getfish = get_fish();
+
  ?>
 
   <h2 class="titletext"><Strong>Fish Species</strong></h2>
@@ -24,14 +29,19 @@ include("header.php");
             </div>
            </div>
 
-            <!--<div class="row">
+           <?php
+                while ($assoc = mysqli_fetch_assoc($getfish)):
+            ?>
+
+            <div class="row">
               <div class="col-lg-3">
               </div>
               <div class="col-lg-5">
                 <div class="Fishcontainer">
                   <img src="Images\600x400.png" class="FishImage"alt="img">
                 <div class="fishname">
-                  <h2>title</h2>
+                  <h2><?=$assoc['fsh_FishName']?></h2>
+                  <h4><?=$assoc['fsh_ScientificName']?></h4>
                 </div>
                 </div>
               </div>
@@ -45,8 +55,10 @@ include("header.php");
                   </div>
                 </div>
               </div>
-            </div> -->
-
+            </div>
+            <?php
+                endwhile;
+             ?>
 
           </div>
      </main>
