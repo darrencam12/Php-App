@@ -10,7 +10,7 @@ include("header.php");
                     </div>
                     <div class="col-lg-5">
                       <div id="addsponsor">
-                        <a href="#" id="Sponsoraddbtn" class="btn btn-primary" role="button"><strong>Add Sponsor</strong></a>
+                        <input type="file" name="image"class="form-control-file"id="FormControlFileImages"/>
                      </div>
                     </div>
                     <div class="col-lg-3">
