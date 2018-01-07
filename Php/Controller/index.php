@@ -1,5 +1,9 @@
 <?php
 include("header.php");
+include("functions.php");
+
+$showreport = show_report();
+$showorders = show_orders();
  ?>
 
         <!-- Page Content -->
@@ -36,46 +40,23 @@ include("header.php");
                     <td>Maria Anders</td>
                     <td>Germany</td>
                   </tr>
-                  <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                  </tr>
-                  <tr>
-                    <td>Ernst Handel</td>
-                    <td>Roland Mendel</td>
-                    <td>Austria</td>
-                    <td>Ernst Handel</td>
-                    <td>Roland Mendel</td>
-                    <td>Austria</td>
-                  </tr>
-                  <tr>
-                    <td>Island Trading</td>
-                    <td>Helen Bennett</td>
-                    <td>UK</td>
-                    <td>Island Trading</td>
-                    <td>Helen Bennett</td>
-                    <td>UK</td>
-                  </tr>
-                  <tr>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Yoshi Tannamuri</td>
-                    <td>Canada</td>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Yoshi Tannamuri</td>
-                    <td>Canada</td>
-                  </tr>
-                  <tr>
-                    <td>Magazzini Alimentari Riuniti</td>
-                    <td>Giovanni Rovelli</td>
-                    <td>Italy</td>
-                    <td>Magazzini Alimentari Riuniti</td>
-                    <td>Giovanni Rovelli</td>
-                    <td>Italy</td>
-                  </tr>
+<?php
+  while ($assoc = mysqli_fetch_assoc($showreport)):
+?>
+
+                   <tr>
+                       <td><?=$assoc['ID']?></td>
+                       <td><?=$assoc['rpt_Name']?></td>
+                       <td><?=$assoc['rpt_Surname']?></td>
+                       <td><?=$assoc['rpt_Email']?></td>
+                       <td><?=$assoc['rpt_PhoneNo']?></td>
+                       <td><?=$assoc['rpt_Date']?></td>
+                       <td><a href="singlereport.php">Check</a> </td>
+                   </tr>
+
+<?php
+  endwhile;
+?>
                 </table>
                 <a href="#">View More</a>
               </div>
@@ -103,38 +84,20 @@ include("header.php");
                     <td>Maria Anders</td>
 
                   </tr>
-                  <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
+<?php
+while ($assoc = mysqli_fetch_assoc($showorders)):
+?>
 
-                  </tr>
                   <tr>
-                    <td>Ernst Handel</td>
-                    <td>Roland Mendel</td>
-                    <td>Austria</td>
-                    <td>Ernst Handel</td>
-                    <td>Roland Mendel</td>
-
+                     <td><?=$assoc['idPoster']?></td>
+                     <td><?=$assoc['ptr_Name']?></td>
+                     <td><?=$assoc['ptr_Surname']?></td>
+                     <td><?=$assoc['ptr_Address']?></td>
                   </tr>
-                  <tr>
-                    <td>Island Trading</td>
-                    <td>Helen Bennett</td>
-                    <td>UK</td>
-                    <td>Island Trading</td>
-                    <td>Helen Bennett</td>
 
-                  </tr>
-                  <tr>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Yoshi Tannamuri</td>
-                    <td>Canada</td>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Yoshi Tannamuri</td>
-
-                  </tr>
+<?php
+endwhile;
+?>
 
                 </table>
                 <a href="#">View More</a>

@@ -71,4 +71,44 @@
 
   }
 
+  function show_report(){
+      // connect to the database;
+      $conn = connect_to_db();
+
+      // defining a query
+
+      $query = "
+        SELECT * FROM `tbl_report`
+        ";
+
+      // asking SQL to perform the query
+      $result = mysqli_query($conn,$query);
+
+      //disconnect from the database
+      disconnect_from_db($conn);
+
+      // give back the end result
+      return $result;
+  }
+
+  function show_orders(){
+      // connect to the database;
+      $conn = connect_to_db();
+
+      // defining a query
+
+      $query = "
+        SELECT * FROM `tbl_poster`
+        ";
+
+      // asking SQL to perform the query
+      $result = mysqli_query($conn,$query);
+
+      //disconnect from the database
+      disconnect_from_db($conn);
+
+      // give back the end result
+      return $result;
+  }
+
 ?>
