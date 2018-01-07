@@ -42,13 +42,15 @@ $getfish = get_fish();
                 <div class="fishname">
                   <h2><?=$assoc['fsh_FishName']?></h2>
                   <h4><?=$assoc['fsh_ScientificName']?></h4>
+                  <h5><?php if($assoc['fsh_Toxic'] == 1)echo "toxic";?></h1>
+                  <h5><?php if($assoc['fsh_Venomous'] == 1)echo "Venomous";?></h1>
                 </div>
                 </div>
               </div>
               <div class="col-lg-3">
                 <div class="buttoncontainer">
                   <div class="editbutton">
-                    <a href="editFish.php" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></a>
+                    <a href="editFish.php?id=<?=$assoc["id"]?>" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></a>
                   </div>
                   <div class="deletebutton">
                       <button type="button" id="fishbtn2"class="btn btn-default"><strong>Delete</strong></button>

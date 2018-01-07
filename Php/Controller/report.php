@@ -24,15 +24,7 @@ $showreport = show_report();
                     <th>Checked</th>
                 </tr>
 
-                <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td><a href="singlereport.php">Check</a> </td>
-                </tr>
+            
 <?php
     while ($assoc = mysqli_fetch_assoc($showreport)):
  ?>

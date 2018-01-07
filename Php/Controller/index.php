@@ -30,16 +30,9 @@ $showorders = show_orders();
                     <th>Email</th>
                     <th>Mobile No.</th>
                     <th>Date</th>
-                    <th>Checked</th>
+                    <th>View</th>
                   </tr>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                  </tr>
+
 <?php
   while ($assoc = mysqli_fetch_assoc($showreport)):
 ?>
@@ -51,7 +44,11 @@ $showorders = show_orders();
                        <td><?=$assoc['rpt_Email']?></td>
                        <td><?=$assoc['rpt_PhoneNo']?></td>
                        <td><?=$assoc['rpt_Date']?></td>
-                       <td><a href="singlereport.php">Check</a> </td>
+                       <td>
+                          <a href="report.php">
+                              View more
+                          </a>
+                       </td>
                    </tr>
 
 <?php
@@ -74,16 +71,9 @@ $showorders = show_orders();
                     <th>Surname</th>
                     <th>Address</th>
                     <th>Date</th>
-                    <th>Checked</th>
+                    <th>View</th>
                   </tr>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
 
-                  </tr>
 <?php
 while ($assoc = mysqli_fetch_assoc($showorders)):
 ?>
@@ -93,6 +83,12 @@ while ($assoc = mysqli_fetch_assoc($showorders)):
                      <td><?=$assoc['ptr_Name']?></td>
                      <td><?=$assoc['ptr_Surname']?></td>
                      <td><?=$assoc['ptr_Address']?></td>
+                    <td><?=$assoc['ptr_Date']?></td>
+                    <td>
+                      <a href="PosterOrders.php">
+                        View more
+                      </a>
+                    </td>
                   </tr>
 
 <?php
@@ -100,7 +96,7 @@ endwhile;
 ?>
 
                 </table>
-                <a href="#">View More</a>
+
               </div>
             </div>
           </div>

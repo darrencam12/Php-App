@@ -1,16 +1,23 @@
 <?php
 include("header.php");
 include("functions.php");
-include("report-process.php");
 
 $showreport = show_report();
+
+/*$getreport = get_report($_GET["ID"]);
+  if($getreport == FALSE) {
+    die("this record doesn't exsits");
+  }*/
+
 ?>
+
    <h2 class="titletext"><Strong>Report</strong></h2>
   </div>
  <div id="page-content-wrapper">
 
 <?php
           while ($assoc = mysqli_fetch_assoc($showreport)):
+
 ?>
 
          <!-- Reports list-->

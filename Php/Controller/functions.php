@@ -1,6 +1,5 @@
 <?php
 
-  session_start();
 
   // this function will allow us to connect to the database and assign the connection to a variable
   function connect_to_db() {
@@ -14,7 +13,7 @@
     mysqli_close($conn);
   }
   // this fucntion will allow insetraion of data to the fishtable
-  function insert_fish($fishname,$fishsname,$forigin/*,$ftoxic,$fvenomous*/){
+  function insert_fish($fishname,$fishsname,$forigin,$ftoxic,$fvenomous){
 
     $conn = connect_to_db();
 
@@ -23,8 +22,8 @@
     $fishname = mysqli_escape_string($conn,$fishname);
     $fishsname = mysqli_escape_string($conn,$fishsname);
     $forigin = mysqli_escape_string($conn,$forigin);
-    //$ftoxic = mysqli_escape_string($conn,$ftoxic);
-    //$fvenomous = mysqli_escape_string($conn,$fvenomous);
+    $ftoxic = mysqli_escape_string($conn,$ftoxic);
+    $fvenomous = mysqli_escape_string($conn,$fvenomous);
 
     // 3. define a query
     $query ="
@@ -71,6 +70,44 @@
 
   }
 
+  function edit_fish($id,$fishname,$fishsname,$forigin,$ftoxic,$fvenomous){
+
+    // connection to the database
+    $conn = connect_to_db();
+
+    $id = mysqli_escape_string($conn,$id);
+    $fishname = mysqli_escape_string($conn,$fishname);
+    $fishsname = mysqli_escape_string($conn,$fishsname);
+    $forigin = mysqli_escape_string($conn,$forigin);
+    $ftoxic = mysqli_escape_string($conn,$ftoxic);
+    $fvenomous = mysqli_escape_string($conn,$fvenomous);
+
+    $query ="
+    UPDATE tbl_fish
+          SET
+              fsh_FishName = '{$fishname}',
+              fsh_ScientificName = '{$fishsname}',
+              fsh_Origin = '{$forigin}',
+              fsh_toxic = '{$ftoxic}',
+              fsh_Venomous = '{$fvenomous}'
+          WHERE
+              id = '{$id}'
+          ";
+      $result  = mysqli_query($conn,$query);
+      if (mysqli_affected_rows($conn) !=1){
+          //.combines two strings
+          echo "the query is not successful:";
+          echo mysqli_error($conn);
+      }else{
+          //this will change $result to TRUE
+          $result = TRUE;
+      }
+      disconect_from_db($conn);
+
+      return $result;
+    }
+
+
   function show_report(){
       // connect to the database;
       $conn = connect_to_db();
@@ -79,6 +116,7 @@
 
       $query = "
         SELECT * FROM `tbl_report`
+        WHERE rpt_Checked = 0
         ";
 
       // asking SQL to perform the query
@@ -90,6 +128,29 @@
       // give back the end result
       return $result;
   }
+
+  /*function get_report($id){
+    // connect to the database;
+    $conn = connect_to_db();
+
+    // defining a query
+    $id = mysqli_escape_string($conn,$id);
+
+    $query = "
+      SELECT * FROM `tbl_report`
+      WHERE (ID)='{$id}'
+      ";
+
+      $result = mysqli_query($conn,$query);
+
+
+      if(mysqli_num_rows($result)!=1){
+        return FALSE;
+      }else {
+          return mysqli_fetch_assoc($result);
+        }
+        disconnect_from_db($conn);
+      }*/
 
   function show_orders(){
       // connect to the database;
@@ -110,5 +171,7 @@
       // give back the end result
       return $result;
   }
+
+
 
 ?>

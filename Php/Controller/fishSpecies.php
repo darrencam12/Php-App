@@ -28,7 +28,7 @@ include("fish-process.php");
             <div class="col-lg-4">
               <div class="lblfishconatiner">
 
-                <input type="text" name="fishname" placeholder="Fish name"
+                <input required type="text" name="fishname" placeholder="Fish name"
                 value="<?php if(isset($_FORM['fishname'])) echo $_FORM['fishname']?>">
                 <?php if (isset($_ERRORS['fishname'])): ?>
                   <p>
@@ -47,7 +47,7 @@ include("fish-process.php");
                  <div class="col-lg-4">
                    <div class="lblfishconatiner">
 
-                     <input type="text" name="fishsname"  placeholder="Scientific name"
+                     <input required type="text" name="fishsname"  placeholder="Scientific name"
                      value="<?php if(isset($_FORM['fishsname'])) echo $_FORM['fishsname']?>">
                      <?php if(isset($_ERRORS['fishsname'])): ?>
                        <p>
@@ -66,7 +66,7 @@ include("fish-process.php");
                   <div class="col-lg-4">
                     <div class="lblfishconatiner">
 
-                      <input type="text" name="forigin" placeholder="Origin of fish"
+                      <input required type="text" name="forigin" placeholder="Origin of fish"
                        value="<?php if(isset($_FORM['forigin'])) echo $_FORM['forigin']?>">
                        <?php if(isset($_ERRORS['forigin'])): ?>
                          <p>
@@ -105,11 +105,11 @@ include("fish-process.php");
             <div class="col-lg-4">
               <div class="radiobuttoncontainer">
                 <div class="radio">
-                    <input type="checkbox" name="" value="">Venomous
+                    <input type="checkbox" name="fvenomous">Venomous
 
                 </div>
                 <div class="radio">
-                  <input type="checkbox" name="danger" value="">Posinous
+                  <input type="checkbox" name="ftoxic">toxic
                 </div>
               </div>
             </div>
