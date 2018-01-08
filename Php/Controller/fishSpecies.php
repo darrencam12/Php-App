@@ -2,6 +2,7 @@
 include("header.php");
 include("functions.php");
 include("fish-process.php");
+include('upload.php');
  ?>
 
   <h2 class="titletext"><Strong>Fish Species</strong></h2>
@@ -92,8 +93,10 @@ include("fish-process.php");
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="fishimageeditcontainer">
-            <input type="file" name="image"class="form-control-file"id="FormControlFileImages"/>
+              <form action="upload.php" enctype="multipart/form-data" method="post">
+                  <input id="file" name="file" type="file" />
+                  <input id="Submit" name="submit" type="submit" value="Submit" />
+              </form>
             </div>
           </div>
         </div>

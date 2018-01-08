@@ -53,7 +53,9 @@ $getfish = get_fish();
                     <a href="editFish.php?id=<?=$assoc["id"]?>" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></a>
                   </div>
                   <div class="deletebutton">
-                      <button type="button" id="fishbtn2"class="btn btn-default"><strong>Delete</strong></button>
+                          <a href="delete_fish.php?id=<?=$assoc["id"]?>" id="fishbtn2"class="btn btn-default">
+                              <strong>Delete</strong>
+                          </a>
                   </div>
                 </div>
               </div>

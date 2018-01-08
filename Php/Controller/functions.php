@@ -172,6 +172,38 @@
       return $result;
   }
 
+  function delete_fish($id){
+
+        $conn = connect_to_db();
+
+        //protect our variables
+        $id = mysqli_escape_string($conn, $id);
+
+        $query ="
+            DELETE FROM tbl_fish
+
+            WHERE
+                id = '{$id}'
+            ";
+        $result = mysqli_query($conn, $query);
+
+        //check that the query worked
+        if (mysqli_affected_rows($conn) !=1){
+            //.combines ywo strings
+            echo "the query is not successful:";
+            echo mysqli_error($conn);
+        }else{
+            //this will change $result to TRUE
+            $result = TRUE;
+
+        }
+
+
+        disconnect_from_db($conn);
+
+        return $result;
+    }
+
 
 
 ?>
