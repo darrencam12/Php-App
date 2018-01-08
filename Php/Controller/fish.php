@@ -4,7 +4,6 @@ include("functions.php");
 include("fish-process.php");
 
 $getfish = get_fish();
-
  ?>
 
   <h2 class="titletext"><Strong>Fish Species</strong></h2>
@@ -14,9 +13,7 @@ $getfish = get_fish();
 
        <!-- Reports list-->
        <main>
-
          <div class="container-fluid">
-
            <div class="row">
              <div class="col-lg-3">
              </div>
@@ -50,12 +47,14 @@ $getfish = get_fish();
               <div class="col-lg-3">
                 <div class="buttoncontainer">
                   <div class="editbutton">
-                    <a href="editFish.php?id=<?=$assoc["id"]?>" id="fishbtn1"class="btn btn-default"><strong>Edit</strong></a>
+                    <a href="editFish.php?id=<?=$assoc["id"]?>" id="fishbtn1"class="btn btn-default">
+                      <strong>Edit</strong>
+                    </a>
                   </div>
                   <div class="deletebutton">
-                          <a href="delete_fish.php?id=<?=$assoc["id"]?>" id="fishbtn2"class="btn btn-default">
-                              <strong>Delete</strong>
-                          </a>
+                    <a href="delete_fish.php?id=<?=$assoc["id"]?>" id="fishbtn2"class="btn btn-default">
+                      <strong>Delete</strong>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -66,11 +65,6 @@ $getfish = get_fish();
 
           </div>
      </main>
-
-
-
-
-
 
  <?php
  include("footer.php");

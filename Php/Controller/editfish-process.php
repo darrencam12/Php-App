@@ -1,5 +1,5 @@
 <?php
-if (!isset ($_GET["id"])){
+/*if (!isset ($_GET["id"])){
         header("Location:editFish.php");
     }
 
@@ -34,6 +34,47 @@ if (!isset ($_GET["id"])){
           }
 
         }
-      }
+      }*/
+  include 'functions.php';
+
+  $id = mysqli_escape_string($conn,$id);
+  $fishname = mysqli_escape_string($conn,$fishname);
+  $fishsname = mysqli_escape_string($conn,$fishsname);
+  $forigin = mysqli_escape_string($conn,$forigin);
+  $ftoxic = mysqli_escape_string($conn,$ftoxic);
+  $fvenomous = mysqli_escape_string($conn,$fvenomous);
+
+  $errors = FALSE;
+
+  if (empty($fishname)){
+      echo "the Fish name can't be blank!";
+      echo "<br>";
+      $errors = TRUE;
+  }
+
+  if (empty($fishsname)){
+      echo "the Scientific name can't be blank!";
+      echo "<br?";
+      $errors = TRUE;
+  }
+  if (empty($forigin)){
+      echo "the fish origin can't be blank!";
+      echo "<br?";
+      $errors = TRUE;
+  }
+
+
+  $editfish = edit_fish($id, $fishname, $fishsname, $forigin, $ftoxic, $fvenomous);
+
+    if($editfish != TRUE){
+      echo $editfish;
+    }else{
+      header("location:fish.php");
+    }
+
+
+
+
+
 
  ?>
