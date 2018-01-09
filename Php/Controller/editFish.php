@@ -1,10 +1,10 @@
 <?php
 include("header.php");
 include("functions.php");
-//include("editfish-process.php");
+include("editfish-process.php");
 
-    $getfish = get_fish();
-    $assoc = mysqli_fetch_assoc($getfish);
+    $fish = get_fish();
+    $assoc = mysqli_fetch_assoc($fish);
  ?>
 
   <h2 class="titletext"><Strong>Fish Species</strong></h2>
@@ -27,8 +27,7 @@ include("functions.php");
             </div>
             <div class="col-lg-4">
               <div class="lblfishconatiner">
-                <input type="text" name="fishname" placeholder="Fish Name" >
-                <!--value="<>?=$assoc["fsh_FishName"]?>"-->
+                <input type="text" name="fishname" value="<?=$assoc["fsh_FishName"]?>">
               </div>
             </div>
             <div class="col-lg-4">
@@ -40,7 +39,7 @@ include("functions.php");
             </div>
             <div class="col-lg-4">
               <div class="lblfishconatiner">
-                <input type="text" name="fishsname"  placeholder="Scientific Name">
+                <input type="text" name="" value="" placeholder="Scientific Name">
               </div>
             </div>
             <div class="col-lg-4">
@@ -82,10 +81,10 @@ include("functions.php");
           <div class="col-lg-4">
             <div class="radiobuttoncontainer">
               <div class="radio">
-                  <input type="checkbox" name="fvenomous">Venomous
+                  <input type="checkbox" name="danger" value="Car">Venomous
               </div>
               <div class="radio">
-                <input type="checkbox" name="ftoxic" >Posinous
+                <input type="checkbox" name="danger" value="Car">Posinous
               </div>
 
             </div>

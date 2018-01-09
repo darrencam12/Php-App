@@ -39,7 +39,24 @@ include('upload.php');
          </div>
        </div>
 
-       
+       <div class="row">
+         <div class="col-lg-4">
+         </div>
+         <div class="col-lg-5">
+           <div id="posternametxt">
+              <input type="text" name="firstname" placeholder="Name">
+           </div>
+           <div id="postersurnametxt">
+              <input type="text" name="lastname" placeholder="Surname">
+           </div>
+           <div id="postersubmitbtn">
+               <button type="button"class="btn btn-default"><strong>Sumbit</strong></button>
+           </div>
+         </div>
+         <div class="col-lg-3">
+         </div>
+       </div>
+
 
 
      </div>
