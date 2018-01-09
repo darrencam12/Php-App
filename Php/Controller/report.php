@@ -21,10 +21,11 @@ $showreport = show_report();
                     <th>Email</th>
                     <th>Phone No.</th>
                     <th>Date</th>
-                    <th>Checked</th>
+                    <th>View</th>
+                    <th>Archive</th>
                 </tr>
 
-            
+
 <?php
     while ($assoc = mysqli_fetch_assoc($showreport)):
  ?>
@@ -35,8 +36,9 @@ $showreport = show_report();
                      <td><?=$assoc['rpt_Surname']?></td>
                      <td><?=$assoc['rpt_Email']?></td>
                      <td><?=$assoc['rpt_PhoneNo']?></td>
-                     <td><?=$assoc['rpt_Date']?></td>
-                     <td><a href="singlereport.php">Check</a> </td>
+                     <td><?=date('Y-n-d', $assoc['rpt_Date'])?></td>
+                     <td><a href="singlereport.php">View</a> </td>
+                     <td><a href="#?id=">Archive</a> </td>
                  </tr>
 
 <?php

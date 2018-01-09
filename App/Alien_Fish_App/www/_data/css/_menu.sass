@@ -15,4 +15,11 @@
         i
             display: block
             padding: 1em
-            
+
+
+.speed-dial
+    .floating-button
+        transition: transform 0.25s ease-in-out
+
+    &.speed-dial-opened .floating-button
+        transform: rotate(45deg)
