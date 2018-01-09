@@ -49,7 +49,7 @@
       return $result;
     }
   // this function will allow to display fish
-  function get_fish(){
+  function get_fish($id = NULL){
     // connect to the database;
     $conn = connect_to_db();
 
@@ -58,6 +58,11 @@
     $query = "
       SELECT * FROM `tbl_fish`
       ";
+
+    if ($id != NULL) {
+        $id = mysqli_escape_string($conn, $id);
+        $query .= "WHERE id={$id}";
+    }
 
     // asking SQL to perform the query
     $result = mysqli_query($conn,$query);
@@ -102,7 +107,7 @@
           //this will change $result to TRUE
           $result = TRUE;
       }
-      disconect_from_db($conn);
+      disconnect_from_db($conn);
 
       return $result;
     }

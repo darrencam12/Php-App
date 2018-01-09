@@ -87,6 +87,10 @@ form .row .button {
     font-size: 1em;
 }
 
+form .row .speed-dial .floating-button {
+    position: fixed;
+}
+
 .poster_img img {
     width: 90%;
     padding: 1em 1.25em;
