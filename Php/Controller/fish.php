@@ -1,9 +1,15 @@
 <?php
-include("header.php");
 include("functions.php");
 include("fish-process.php");
 
+
 $getfish = get_fish();
+<<<<<<< HEAD
+=======
+
+include("header.php");
+
+>>>>>>> dfd2c78d342432715a364cd8830541ce364e126e
  ?>
 
   <h2 class="titletext"><Strong>Fish Species</strong></h2>
@@ -28,6 +34,16 @@ $getfish = get_fish();
 
            <?php
                 while ($assoc = mysqli_fetch_assoc($getfish)):
+
+                    // retrieves all the images that match the criteria
+                    $images = glob("uploaded_imgs/{$assoc['id']}.*");
+
+                    // if there are any images on the disk, we can use it.
+                    if (count($images) > 0) {
+                        $images = $images[0];
+                    } else {
+                        $images = 'Images\600x400.png';
+                    }
             ?>
 
             <div class="row">
@@ -35,7 +51,7 @@ $getfish = get_fish();
               </div>
               <div class="col-lg-5">
                 <div class="Fishcontainer">
-                  <img src="Images\600x400.png" class="FishImage"alt="img">
+                  <img src="<?=$images?>" class="FishImage"alt="img">
                 <div class="fishname">
                   <h2><?=$assoc['fsh_FishName']?></h2>
                   <h4><?=$assoc['fsh_ScientificName']?></h4>

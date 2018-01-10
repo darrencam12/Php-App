@@ -1,8 +1,7 @@
 <?php
-include("header.php");
 include("functions.php");
 include("fish-process.php");
-include('upload.php');
+include("header.php");
  ?>
 
   <h2 class="titletext"><Strong>Fish Species</strong></h2>
@@ -16,7 +15,7 @@ include('upload.php');
    <div id="page-content-wrapper">
        <div class="container-fluid">
 
-         <form  action="fishSpecies.php" method="post">
+         <form  action="fishSpecies.php" method="post" enctype="multipart/form-data">
 
          <!--this is for the fish name and scientific name-->
          <div class="row">
@@ -96,7 +95,12 @@ include('upload.php');
               <form action="upload.php" enctype="multipart/form-data" method="post">
                   <input id="file" name="file" type="file" />
                   <input id="Submit" name="submit" type="submit" value="Submit" />
+<<<<<<< HEAD
               </form>
+=======
+              </form>-->
+              <input type="file" name="file" class="form-control-file"id="FormControlFileImages"  accept=".png, .gif, .jpg"/>
+>>>>>>> dfd2c78d342432715a364cd8830541ce364e126e
             </div>
           </div>
         </div>

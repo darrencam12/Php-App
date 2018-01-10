@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /*if (!isset ($_GET["id"])){
         header("Location:editFish.php");
     }
@@ -9,6 +10,8 @@
     }
 
 
+=======
+>>>>>>> dfd2c78d342432715a364cd8830541ce364e126e
       $_ERRORS = array();
 
       $_FORM = array();
@@ -18,17 +21,19 @@
         foreach ($_POST as $key => $value) {
           $_FORM[$key] = htmlspecialchars($value);
         }
+
+        $fishid = $_POST['fishid'];
         $fishname = $_POST['fishname'];
         $fishsname = $_POST['fishsname'];
         $forigin = $_POST['forigin'];
-        if(isset($_POST['ftoxic'])) $ftoxic = 1; else $ftoxic = 0;
-        if(isset($_POST['fvenomous'])) $fvenomous = 1; else $fvenomous = 0;
+        $ftoxic = (isset($_POST['ftoxic'])) ? $_POST['ftoxic'] : 0;
+        $fvenomous = (isset($_POST['fvenomous'])) ? $_POST['fvenomous'] : 0;
 
 
         if(empty($_ERRORS)){
-          $id = insert_fish($fishname,$fishsname,$forigin,$ftoxic,$fvenomous);
+          $id = edit_fish($fishid, $fishname,$fishsname,$forigin,$ftoxic,$fvenomous);
 
-          if(!is_int($id)){
+          if($id !== TRUE){
             echo $id;
             die;
           }
