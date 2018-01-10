@@ -40,14 +40,6 @@
     padding: 1em;
 }
 
-.speed-dial .floating-button {
-    transition: transform 0.25s ease-in-out;
-}
-
-.speed-dial.speed-dial-opened .floating-button {
-    transform: rotate(45deg);
-}
-
 .fish {
     display: flex;
     padding: .5em 1em;

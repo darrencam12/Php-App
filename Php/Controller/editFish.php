@@ -1,24 +1,10 @@
 <?php
+include("header.php");
 include("functions.php");
 //include("editfish-process.php");
 
-<<<<<<< HEAD
     $getfish = get_fish();
     $assoc = mysqli_fetch_assoc($getfish);
-=======
-    if (!isset ($_GET["id"])){
-        header("Location:fish.php");
-    }
-
-    $fish = get_fish($_GET['id']);
-    $assoc = mysqli_fetch_assoc($fish);
-
-    if ($assoc == NULL) {
-        die('This fish does not exist!');
-    }
-
-    include("header.php");
->>>>>>> dfd2c78d342432715a364cd8830541ce364e126e
  ?>
 
   <h2 class="titletext"><Strong>Fish Species</strong></h2>
@@ -30,7 +16,7 @@ include("functions.php");
 
    <div id="page-content-wrapper">
        <div class="container-fluid">
-         <form enctype="multipart/form-data" action="editfish.php?id=<?=$_GET['id']?>" method="post">
+         <form enctype="multipart/form-data" action="index.html" method="post">
 
 
          <div class="row">
@@ -54,11 +40,7 @@ include("functions.php");
             </div>
             <div class="col-lg-4">
               <div class="lblfishconatiner">
-<<<<<<< HEAD
                 <input type="text" name="fishsname"  placeholder="Scientific Name">
-=======
-                <input type="text" name="fishsname" value="<?=$assoc["fsh_ScientificName"]?>" placeholder="Scientific Name">
->>>>>>> dfd2c78d342432715a364cd8830541ce364e126e
               </div>
             </div>
             <div class="col-lg-4">
@@ -70,7 +52,7 @@ include("functions.php");
                   </div>
                   <div class="col-lg-4">
                     <div class="lblfishconatiner">
-                      <input type="text" name="forigin" value="<?=$assoc["fsh_Origin"]?>" placeholder="Origin of fish">
+                      <input type="text" name="forigin" placeholder="Origin of fish">
                     </div>
                   </div>
                   <div class="col-lg-4">
@@ -99,21 +81,12 @@ include("functions.php");
           </div>
           <div class="col-lg-4">
             <div class="radiobuttoncontainer">
-<<<<<<< HEAD
               <div class="radio">
                   <input type="checkbox" name="fvenomous">Venomous
               </div>
               <div class="radio">
                 <input type="checkbox" name="ftoxic" >Posinous
               </div>
-=======
-              <label class="radio">
-                  <input type="checkbox" name="fvenomous" value="1">Venomous
-              </label>
-              <label class="radio">
-                <input type="checkbox" name="ftoxic" value="1">Posinous
-            </label>
->>>>>>> dfd2c78d342432715a364cd8830541ce364e126e
 
             </div>
           </div>
@@ -134,12 +107,11 @@ include("functions.php");
           </div>
         </div>
         </div>
+      </form>
         <div class="savebtn">
-            <input type="hidden" name="fishid" value="<?=$assoc['id']?>">
           <button type="submit" id="fishimageeditbtn"class="btn btn-default"><strong>save</strong></button>
         </div>
-    </form>
-</div>
+      </div>
 
 
 
