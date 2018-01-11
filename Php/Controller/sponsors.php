@@ -5,6 +5,7 @@ include("header.php");
   </div>
  <div id="page-content-wrapper">
      <div class="container-fluid">
+
                   <div class="row">
                     <div class="col-lg-3">
                     </div>
@@ -28,11 +29,9 @@ include("header.php");
                     <div class="col-lg-1">
                       <div class="Sponsorbuttoncontainer">
                         <div class="sponsorEditbtn">
-                          <button type="button" id="sponsorbtn1"class="btn btn-default"><strong>Edit</strong></button>
-                        </div>
-                        <div class="sponsorDeletebtn">
                             <button type="button" id="sponsorbtn2"class="btn btn-default"><strong>Delete</strong></button>
                         </div>
+
                       </div>
                     </div>
                     <div class="col-lg-3">
@@ -43,54 +42,14 @@ include("header.php");
                    <div class="col-lg-1">
                      <div class="Sponsorbuttoncontainer">
                        <div class="sponsorEditbtn">
-                         <button type="button" id="sponsorbtn1"class="btn btn-default"><strong>Edit</strong></button>
+                            <button type="button" id="sponsorbtn2"class="btn btn-default"><strong>Delete</strong></button>
                        </div>
-                       <div class="sponsorDeletebtn">
-                           <button type="button" id="sponsorbtn2"class="btn btn-default"><strong>Delete</strong></button>
-                       </div>
-
+                       
                    </div>
                    <div class="col-lg-2">
                    </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-2">
-                  </div>
-                  <div class="col-lg-3">
-                    <div class="sponsorcontainer">
-                      <img src="Images\600x400.png" class="FishImage"alt="img">
-                    </div>
-                  </div>
-                  <div class="col-lg-1">
-                    <div class="Sponsorbuttoncontainer">
-                      <div class="sponsorEditbtn">
-                        <button type="button" id="sponsorbtn1"class="btn btn-default"><strong>Edit</strong></button>
-                      </div>
-                      <div class="sponsorDeletebtn">
-                          <button type="button" id="sponsorbtn2"class="btn btn-default"><strong>Delete</strong></button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3">
-                    <div class="sponsorcontainer">
-                      <img src="Images\600x400.png" class="FishImage"alt="img">
-                    </div>
-                 </div>
-                 <div class="col-lg-1">
-                   <div class="Sponsorbuttoncontainer">
-                     <div class="sponsorEditbtn">
-                       <button type="button" id="sponsorbtn1"class="btn btn-default"><strong>Edit</strong></button>
-                     </div>
-                     <div class="sponsorDeletebtn">
-                         <button type="button" id="sponsorbtn2"class="btn btn-default"><strong>Delete</strong></button>
-                     </div>
-
-                 </div>
-                 <div class="col-lg-2">
-                 </div>
-                </div>
-              </div>
 
      </div>
  <?php

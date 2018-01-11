@@ -20,8 +20,7 @@ $showorders = show_orders();
                <th>Surname</th>
                <th>Adress</th>
                <th>Date</th>
-               <th>Checked</th>
-             </tr>
+               </tr>
 
 <?php
  while ($assoc = mysqli_fetch_assoc($showorders)):
@@ -33,11 +32,7 @@ $showorders = show_orders();
                   <td><?=$assoc['ptr_Surname']?></td>
                   <td><?=$assoc['ptr_Address']?></td>
                   <td><?=date('Y-n-d', $assoc['ptr_Date'])?></td>
-                  <td>
-                    <a href="">
-                      need to see
-                    </a>
-                  </td>
+
 
               </tr>
 
