@@ -28,9 +28,9 @@
           <div id="sidebar-wrapper">
               <ul class="sidebar-nav">
                   <li class="sidebar-brand">
-                      <a href="index.php">
-                        <Strong>Controller</Strong>
-                      </a>
+
+                        <p id="titlecolor"><Strong>Controller</Strong></p>
+
                   </li>
                   <li>
                       <a href="index.php"><Strong>Home</strong></a>
@@ -39,7 +39,8 @@
                       <a href="fish.php"><Strong>Fish Species</strong></a>
                   </li>
                   <li>
-                      <a href="report.php"><Strong>Report</strong></a>
+                      <a href="blank.php"><Strong>Report</strong></a>
+                    <!--<a href="report.php"><Strong>Report</strong></a>-->
                   </li>
                   <li>
                       <a href="poster.php"><Strong>Poster</strong></a>

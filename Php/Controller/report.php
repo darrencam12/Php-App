@@ -1,19 +1,20 @@
 <?php
-include("header.php");
-include("functions.php");
+  include("header.php");
+  include("functions.php");
+  include("archive-report.php")
 
-$showreport = show_report();
+
  ?>
    <h2 class="titletext"><Strong>Report</strong></h2>
   </div>
- <div id="page-content-wrapper">
+  <div id="page-content-wrapper">
 
 
          <!-- Reports list-->
       <div class="container-fluid">
 
         <div class="row">
-            <table>
+              <table class="table table-striped">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -21,37 +22,38 @@ $showreport = show_report();
                     <th>Email</th>
                     <th>Phone No.</th>
                     <th>Date</th>
-                    <th>Checked</th>
+                    <th>View</th>
+                    <th>Archive</th>
                 </tr>
 
-            
-<?php
-    while ($assoc = mysqli_fetch_assoc($showreport)):
- ?>
+                               <body>
+                               <?php foreach($archive as $user){
+                                   $rows =
+                                   "<tr>
+                                   <td>$user[0]</td>
+                                   <td>$user[1]</td>
+                                   <td>$user[2]</td>
+                                   <td>$user[3]</td>
+                                   <td>$user[4]</td>
+                                   <td>$user[5]</td>
+                                   <td>$user[6]</td>";
 
-                 <tr>
-                     <td><?=$assoc['ID']?></td>
-                     <td><?=$assoc['rpt_Name']?></td>
-                     <td><?=$assoc['rpt_Surname']?></td>
-                     <td><?=$assoc['rpt_Email']?></td>
-                     <td><?=$assoc['rpt_PhoneNo']?></td>
-                     <td><?=$assoc['rpt_Date']?></td>
-                     <td><a href="singlereport.php">Check</a> </td>
-                 </tr>
+                                   $rows.="<td><a class='btn btn-danger' href='Checked.php?user=".$user[0]."'>Archive</a></td>";
 
-<?php
-    endwhile;
-?>
-
-            </table>
-           <div class="row">
-               <a href="singlereport.php">Single_Report</a>
-           </div>
+                                   $rows.="</tr>";
+                                   echo $rows;
+                                 ;
+                               }?>
+                               </body>
+                            </table>
+         <div class="row">
+             <a href="singlereport.php">Single_Report</a>
          </div>
-        </div>
+       </div>
       </div>
+    </div>
 
 
- <?php
- include("footer.php");
-  ?>
+<?php
+    include("footer.php");
+?>

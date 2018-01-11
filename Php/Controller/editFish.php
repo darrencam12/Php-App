@@ -1,124 +1,80 @@
 <?php
-include("header.php");
-include("functions.php");
-//include("editfish-process.php");
+  include("functions.php");
+  include("editfish-process.php");
+      if (!isset ($_GET["id"])){
+          header("Location:fish.php");
+      }
 
-    $getfish = get_fish();
-    $assoc = mysqli_fetch_assoc($getfish);
- ?>
+      $fish = get_fish($_GET['id']);
+      $assoc = mysqli_fetch_assoc($fish);
 
-  <h2 class="titletext"><Strong>Fish Species</strong></h2>
+      if ($assoc == NULL) {
+          die('This fish does not exist!');
+      }
 
+      include("header.php");
+?>
+  <h2 class="titletext"><Strong>Edit Fish Species</strong></h2>
  </div>
 
-       <!-- Reports list-->
+
 
 
    <div id="page-content-wrapper">
-       <div class="container-fluid">
-         <form enctype="multipart/form-data" action="index.html" method="post">
+     <div class="container-fluid">
 
+         <form enctype="multipart/form-data" action="editfish.php?id=<?=$_GET['id']?>" method="post">
 
-         <div class="row">
-           <a href="fish.php"class="btn btn-default" id="posterbackbtn"><strong>Go Back</strong></a>
-         </div>
-          <div class="row">
-            <div class="col-lg-4">
+           <div class="row">
+             <a href="fish.php"class="btn btn-default" id="posterbackbtn"><strong>Go Back</strong></a>
+           </div>
+           <div class="form-group">
+               <label for="fishname">Name:</label>
+                <input type="text" class="form-control" name="fishname" value="<?=$assoc["fsh_FishName"]?>">
             </div>
-            <div class="col-lg-4">
-              <div class="lblfishconatiner">
-                <input type="text" name="fishname" placeholder="Fish Name" >
-                <!--value="<>?=$assoc["fsh_FishName"]?>"-->
+            <div class="form-group">
+              <label for="fishsname">Scientific Name:</label>
+                <input type="text"  class="form-control" name="fishsname" value="<?=$assoc["fsh_ScientificName"]?>" placeholder="Scientific Name">
+            </div>
+            <div class="form-group">
+              <label for="forigin">Origin Of Fish:</label>
+                <input type="text" class="form-control" name="forigin" value="<?=$assoc["fsh_Origin"]?>" placeholder="Origin of fish">
               </div>
-            </div>
-            <div class="col-lg-4">
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4">
-            </div>
-            <div class="col-lg-4">
-              <div class="lblfishconatiner">
-                <input type="text" name="fishsname"  placeholder="Scientific Name">
-              </div>
-            </div>
-            <div class="col-lg-4">
-
-            </div>
-          </div>
-          <div class="row">
-                  <div class="col-lg-4">
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="lblfishconatiner">
-                      <input type="text" name="forigin" placeholder="Origin of fish">
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                  </div>
-                </div>
 
 
              <!--this is for the image input-->
-        <div class="row">
-          <div class="col-lg-4">
-          </div>
-          <div class="col-lg-4">
-            <div class="fishspeciescontainer">
-              <img src="Images\600x400.png" class="FishImage"alt="img">
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="fishimageeditcontainer">
+              <h5><strong>Change Image:</strong></h5>
               <input type="file" name="image"class="form-control-file"id="FormControlFileImages"/>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-lg-4">
-          </div>
-          <div class="col-lg-4">
-            <div class="radiobuttoncontainer">
-              <div class="radio">
-                  <input type="checkbox" name="fvenomous">Venomous
+              <div class="row">
+                <div class="container-fluid">
+                  <div class="checkboxspacing">
+                    <div class="form-check">
+                      <h5><strong>Danger of Fish</strong></h5>
+                      <div>
+                        <input type="checkbox" name="fvenomous" value="1">Venomous
+                      </div>
+                      <div >
+                        <input type="checkbox" name="ftoxic" value="1">Posinous
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="radio">
-                <input type="checkbox" name="ftoxic" >Posinous
+              <div class="form-group">
+                 <label for="comment">Desciption:</label>
+                 <textarea class="form-control" rows="5" id="comment"></textarea>
               </div>
 
-            </div>
-          </div>
-          <div class="col-lg-4">
+              <input type="hidden" name="fishid" value="<?=$assoc['id']?>">
+              <button type="submit" id="fishimageeditbtn"class="btn btn-primary btn-lg"><strong>Edit Fish</strong></button>
 
-          </div>
-        </div>
+    </form>
 
-        <div class="row">
-          <div class="col-lg-4">
-          </div>
-          <div class="col-lg-6">
-            <textarea rows="15" cols="50">
-              </textarea>
-          </div>
-          <div class="col-lg-2">
-
-          </div>
-        </div>
-        </div>
-      </form>
-        <div class="savebtn">
-          <button type="submit" id="fishimageeditbtn"class="btn btn-default"><strong>save</strong></button>
-        </div>
-      </div>
+    </div>
+  </div>
 
 
-
-
-
-
-
- <?php
- include("footer.php");
-  ?>
+<?php
+  include("footer.php");
+?>

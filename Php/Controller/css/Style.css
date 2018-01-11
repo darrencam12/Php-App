@@ -32,6 +32,9 @@ tr:nth-child(even) {
 #addbtn{
   width:300px;
 }
+#titlecolor{
+  color: #999999;
+}
 
 #addfish{
 text-align: center;
@@ -39,7 +42,7 @@ padding-bottom: 10px;
 }
 .Fishcontainer{
   border-style: solid;
-  padding:40px;
+  padding:20px;
   margin-bottom: 10px;
 
 }
@@ -47,16 +50,17 @@ padding-bottom: 10px;
 
 .FishImage{
   display:block;
-  padding-top: 30px;
+  padding-top: 20px;
   width: 100%;
+
 }
 .fishname{
-  padding-top: 30px;
-  padding-left: 60px;
+  padding-top: 10px;
+  padding-left: 20px;
 }
 .buttoncontainer{
   border-style: solid;
-  padding:40px;
+  padding:20px;
 }
 #menubutton{
 padding: 15px;
@@ -157,6 +161,7 @@ padding-top: 30px;
 }
 .lblfishconatiner{
 text-align: center;
+padding-top: 10px;
 }
 #lblfishname{
 font-weight: bold;
@@ -166,6 +171,11 @@ padding-top: 10px;
   padding-left:30px;
   padding-right:30px;
 }
+.textfishconatiner{
+  font-weight: bold;
+  padding-top: 10px;
+  margin-left: 30px
+}
 #fishnameeditbtn{
   width:100%;
 }
@@ -173,6 +183,9 @@ padding-top: 10px;
   padding-top: 130px;
   padding-left: 30px;
   padding-right: 30px;
+}
+.checkboxspacing{
+  padding-top: 20px;
 }
 #fishimageeditbtn{
   width: 100%;

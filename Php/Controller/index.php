@@ -43,7 +43,7 @@ $showorders = show_orders();
                        <td><?=$assoc['rpt_Surname']?></td>
                        <td><?=$assoc['rpt_Email']?></td>
                        <td><?=$assoc['rpt_PhoneNo']?></td>
-                       <td><?=$assoc['rpt_Date']?></td>
+                       <td><?=date('Y-n-d', $assoc['rpt_Date'])?></td>
                        <td>
                           <a href="report.php">
                               View more
@@ -55,7 +55,7 @@ $showorders = show_orders();
   endwhile;
 ?>
                 </table>
-                <a href="#">View More</a>
+
               </div>
                   <!-- Reports list-->
               <div class="row">
@@ -83,7 +83,7 @@ while ($assoc = mysqli_fetch_assoc($showorders)):
                      <td><?=$assoc['ptr_Name']?></td>
                      <td><?=$assoc['ptr_Surname']?></td>
                      <td><?=$assoc['ptr_Address']?></td>
-                    <td><?=$assoc['ptr_Date']?></td>
+                    <td><?=date('Y-n-d', $assoc['ptr_Date'])?></td>
                     <td>
                       <a href="PosterOrders.php">
                         View more
