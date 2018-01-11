@@ -4,23 +4,87 @@
 <div class="navbar">
     <div class="navbar-inner">
         <div class="left">
-            <a href="#" class="back link">
+            <!--<a href="#" class="back link">
                 <i class="icon icon-back"></i>
                 <span>Back</span>
-            </a>
+            </a>-->
         </div>
-        <div class="center sliding">Send Report</div>
+        <div class="center sliding"><p>Send Report</p></div>
         <div class="right">
-            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+            <a href="#" class="link icon-only open-panel">
+                <div style="font-size:1.75em; color: white">
+                <i class="fas fa-bars"></i>
+                </div>
+            </a>
         </div>
     </div>
 </div>
 <div class="pages">
-    <div data-page="about" class="page">
+    <div data-page="send_report" class="page">
         <div class="page-content">
             <div class="content-block">
-                <p>Sponsors page!</p>
-                <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+                <form >
+
+                    <div class="row">
+                        <div class="col-45"><label for="input-name">Name:</label></div>
+                        <div class="col-55"><input type="text" name="Name" placeholder="John"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-45"><label for="input-surname">Surname:</label></div>
+                        <div class="col-55"><input type="text" name="Surname" placeholder="Abela"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-45"><label for="input-email">Email:</label></div>
+                        <div class="col-55"><input type="email" name="Email" placeholder="me@example.com"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-45"><label for="input-number">Contact Number:</label></div>
+                        <div class="col-55"><input type="number" name="Phone Number" placeholder="79111222"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-45"><label for="input-description">Describe Species:</label></div>
+                        <div class="col-55"><textarea name="Describe" rows="10" cols="20" placeholder="Rounded shape with strips on it's side" ></textarea> </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-45"><label for="input-date">Date of Capture:</label></div>
+                        <div class="col-55"><input type="date" name="Date" placeholder="Date of Capture"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-45"><label for="input-location">Location of Capture:</label></div>
+                        <div class="col-55"><input type="text" name="Location" placeholder="Ghadira Bay"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-50"><label for="input-frozen">Is species frozen:</label></div>
+                        <div class="col-50">
+                            <input type="radio" name="gender" value="male"> Yes
+                            <input type="radio" name="gender" value="female"> No
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-50"><label for="input-donation">Are you willing to donate or sell to
+                        the fish you caught to the University:</label></div>
+                        <div class="col-50">
+                            <input type="radio" name="gender" value="male"> Yes
+                            <input type="radio" name="gender" value="female"> No
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-50"></div>
+                        <div class="col-50"><input type="submit" class="button button-fill" value="Submit"></div>
+                    </div>
+
+
+
+                </form>
             </div>
         </div>
     </div>
