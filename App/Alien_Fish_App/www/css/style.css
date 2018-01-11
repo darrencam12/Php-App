@@ -60,7 +60,7 @@
 }
 
 form .row {
-    padding: 1em;
+    padding: 1em  0;
     text-align: left;
     font-size: 1.5em;
     color: #0b497c;
@@ -69,15 +69,20 @@ form .row {
 form .row input {
     background-color: white;
     color: #005b94;
-    font-size: .65em;
+    font-size: .8em;
     border: 1.5px solid #0b497c;
     border-radius: 2.5px;
-    padding: .5em .5em 0 .5em;
+    padding: .25em 0 .25em .25em;
+    width: 100%;
 }
 
 form .row ::placeholder {
     color: #005b94;
-    font-size: 1.4em;
+    font-size: 1em;
+}
+
+form .row .input {
+    display: flex;
 }
 
 form .row .button {
@@ -118,4 +123,9 @@ form .row .button {
 
 .aboutinfo {
     color: #005B94;
+}
+
+.speed-dial-opened .floating-button {
+    transform: rotate(45deg);
+    transition: .1s;
 }
