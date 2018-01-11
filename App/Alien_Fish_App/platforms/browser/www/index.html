@@ -43,12 +43,43 @@
     <!-- Left panel with reveal effect-->
     <div id="menu" class="panel panel-left panel-reveal">
         <div class="content-block">
-            <a href="index.html"><i class="icon icon-home">HOME</i></a>
-            <a href="fish_species.html"><i class="icon icon-home">FISH SPECIES</i></a>
-            <a href="send_report.html"><i class="icon icon-home">SEND REPORT</i></a>
-            <a href="order_poster.html"><i class="icon icon-home">ORDER POSTER</i></a>
-            <a href="about.html"><i class="icon icon-home">ABOUT</i></a>
-            <a href="sponsors.html" ><i class="icon icon-persons">SPONSORS</i></a>
+            <a href="index.html"class="close-panel">
+                <div style="font-size:1.75em; color: white; padding:.5em">
+                    <i class="fas fa-home"></i>
+                    Home
+                </div>
+            </a>
+            <a href="fish_species.html"class="close-panel">
+                <div style="font-size:1.75em; color: white; padding:.5em">
+                    <img class="fsh-icn" src="images\Fish_Icon.png" alt="fish icon">
+                    Fish Species
+                </div>
+            </a>
+            <a href="send_report.html"class="close-panel">
+                <div style="font-size:1.75em; color: white; padding:.5em">
+                    <i class="fas fa-envelope"></i>
+                    Send Report
+                </div>
+            </a>
+            <a href="order_poster.html"class="close-panel">
+                <div style="font-size:1.75em; color: white; padding:.5em">
+                    <i class="fas fa-image"></i>
+                    Order Poster
+                </div>
+            </a>
+            <a href="about.html" class="close-panel">
+                <div style="font-size:1.75em; color: white; padding:.5em">
+                    <i class="fas fa-info-circle"></i>
+                    About Us
+                </div>
+            </a>
+            <a href="sponsors.html" class="close-panel">
+                <div style="font-size:1.75em; color: white; padding:.5em">
+                    <i class="fas fa-users"></i>
+                    Sponsors
+                </div>
+            </a>
+
         </div>
     </div>
 
@@ -66,15 +97,18 @@
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        <a href="#" class="link icon-only open-panel">
+                            <div style="font-size:1.75em; color: white">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                        </a>
                     </div>
-                    <div class="subnavbar">
-
-                        <h3>Spot the Alien Fish</h3>
-
-
-                    </div>
+                    <!--<div class="subnavbar">
+                        <<div></div>> <p>Spot the Alien Fish</p> </div>
+                    </div>-->
                 </div>
+
+
             </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
@@ -83,21 +117,50 @@
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
+                            <div class="speed-dial">
+                                <!-- FAB inside will open Speed Dial actions -->
+                                <a href="#" class="floating-button">
+                                  <!-- First icon is visible when Speed Dial actions are closed -->
+                                    <div style="font-size:1.75em; color: white">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
 
+                                  <!-- Second icon is visible when Speed Dial actions are opened -->
+                                    <div style="font-size:1.75em; color: white">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </a>
+                                <!-- Speed Dial Actions -->
+                                <div class="speed-dial-buttons">
+                                  <!-- First Speed Dial button -->
+                                  <a href="send_report.html">
+                                      <div style="font-size:1.75em; color: white">
+                                          <i class="fas fa-envelope"></i>
+                                      </div>
+                                  </a>
+                                  <!-- Second Speed Dial  button -->
+                                  <a href="order_poster.html">
+                                      <div style="font-size:1.75em; color: white">
+                                          <i class="fas fa-image"></i>
+                                      </div>
+                                  </a>
+
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Bottom Toolbar-->
+            <!-- Bottom Toolbar
             <div class="toolbar">
                 <div class="toolbar-inner"></div>
-            </div>
+            </div>-->
         </div>
     </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+    <script defer src="js\fontawesome-all.js"></script>
 </body>
 
 </html>
