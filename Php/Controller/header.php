@@ -45,9 +45,9 @@
                   <li>
                       <a href="poster.php"><Strong>Poster</strong></a>
                   </li>
-                  <li>
+                  <!--<li>
                       <a href="about.php"><Strong>About Us</strong></a>
-                  </li>
+                  </li>-->
                   <li>
                       <a href="sponsors.php"><Strong>Sponsors</strong></a>
                   </li>

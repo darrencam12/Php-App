@@ -113,7 +113,7 @@
     }
 
 
-  function show_report(){
+  function show_report($id = NULL){
       // connect to the database;
       $conn = connect_to_db();
 
@@ -122,7 +122,12 @@
       $query = "
         SELECT * FROM `tbl_report`
         WHERE rpt_Checked = 0
-        ";
+      ";
+
+      if ($id != NULL) {
+        $id = mysqli_escape_string($conn, $id);
+        $query .= "AND ID = {$id}";
+      }
 
       // asking SQL to perform the query
       $result = mysqli_query($conn,$query);

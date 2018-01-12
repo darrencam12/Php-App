@@ -12,7 +12,7 @@ include("header.php");
               <form enctype="multipart/form-data" action="register-process.php" method="post">
                     <div class="form-group">
                           <label for="userName">Username:</label>
-                          <input type="text" class="form-control" name="userName"placeholder="Waka"id="input-user">
+                          <input type="text" class="form-control" name="userName"placeholder="Username"id="input-user">
                      </div>
 
                       <div class="form-group">

@@ -7,7 +7,7 @@ if (!check_login()) {
 include("header.php");
 
 
-$showreport = show_report();
+$showreport = show_report($_GET['user']);
 
 /*$getreport = get_report($_GET["ID"]);
   if($getreport == FALSE) {
