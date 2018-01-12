@@ -9,7 +9,7 @@
     if($result)
     {
         echo "Record added successfully ";
-        header("Location: Blank.php");
+        header("Location: report.php");
 
     }
     else

@@ -1,11 +1,11 @@
 <?php
-
+include("functions.php");
 if (!check_login()) {
     header('Location:login.php');
 }
 
 include("header.php");
-include("functions.php");
+
 
 $showorders = show_orders();
  ?>

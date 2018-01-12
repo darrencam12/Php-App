@@ -39,7 +39,7 @@
                       <a href="fish.php"><Strong>Fish Species</strong></a>
                   </li>
                   <li>
-                      <a href="blank.php"><Strong>Report</strong></a>
+                      <a href="report.php"><Strong>Report</strong></a>
                     <!--<a href="report.php"><Strong>Report</strong></a>-->
                   </li>
                   <li>
