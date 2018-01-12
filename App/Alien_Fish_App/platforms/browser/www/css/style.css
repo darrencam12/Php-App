@@ -4,7 +4,7 @@
 
 .views .navbar-inner {
     background-color: #0B497C;
-    color: white;
+    color: #ffffff;
     padding: 1.5em;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .views .page-content {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 .views .page-content h3 {
@@ -26,8 +26,12 @@
 }
 
 #menu .content-block {
-    color: white;
+    color: #ffffff;
     margin-top: 10em;
+}
+
+#menu .content-block p {
+    font-weight: normal;
 }
 
 #menu .content-block img .fsh-icn {
@@ -43,7 +47,7 @@
 .fish {
     display: flex;
     padding: .5em 1em;
-    background-color: lightblue;
+    background-color: #A4D7F2;
     margin: 1em 0;
 }
 
@@ -55,7 +59,7 @@
 
 .fish p {
     color: #005B94;
-    font-size: 1.35em;
+    font-size: 1.5em;
     text-align: center;
     margin: 1.4em 1em;
 }
@@ -68,6 +72,11 @@ form .row {
     margin-right: .5em;
 }
 
+form .row img {
+    width: 100%;
+    padding: .5em 0em;
+}
+
 form .row textarea {
     font-size: 1em;
     color: #005b94;
@@ -76,7 +85,7 @@ form .row textarea {
 }
 
 form .row input {
-    background-color: white;
+    background-color: #ffffff;
     color: #005b94;
     font-size: 1em;
     border: 1.5px solid #0b497c;
@@ -96,12 +105,12 @@ form .row .input {
 
 form .row .button {
     padding: 0;
-    color: white;
+    color: #ffffff;
     background-color: #0b497c;
     font-size: 1em;
 }
 
-form .row .yn {
+form .row .radio {
     display: flex;
 }
 
@@ -136,6 +145,19 @@ form .row .yn {
 
 .aboutinfo {
     color: #005B94;
+    font-size: 1.2em;
+}
+
+.home img {
+    margin-top: 2em;
+    width: 90%;
+    padding: 1em 1.25em;
+}
+
+.home p {
+    font-size: 2.5em;
+    text-align: center;
+    color: #005B94;
 }
 
 .floating-button {
@@ -157,16 +179,4 @@ form .row .yn {
 .speed-dial-opened .floating-button {
     transform: rotate(45deg);
     transition: .1s;
-}
-
-.home img {
-    margin-top: 2em;
-    width: 90%;
-    padding: 1em 1.25em;
-}
-
-.home p {
-    font-size: 2.5em;
-    text-align: center;
-    color: #005B94;
 }
