@@ -1,6 +1,11 @@
 <?php
   include("functions.php");
+  if (!check_login()) {
+      header('Location:login.php');
+  }
   include("editfish-process.php");
+
+
       if (!isset ($_GET["id"])){
           header("Location:fish.php");
       }

@@ -1,4 +1,9 @@
 <?php
+
+if (!check_login()) {
+    header('Location:login.php');
+}
+
 include("header.php");
  ?>
    <h2 class="titletext"><Strong>About Us</strong></h2>

@@ -250,7 +250,121 @@
           // give back the end result
           return $result;
             }
-  
+
+    function check_login(){
+
+        // 1. if the session contains no data
+        // there's nothing else to do
+        if (!array_key_exists('id', $_COOKIE)) {
+            return FALSE;
+        }
+
+        // 2. put the user information in a variable
+        $user = $_COOKIE;
+        // 3. connect to the database
+        $conn = connect_to_db();
+
+        // 4. protect the variables
+        $id = mysqli_escape_string($conn, $user['id']);
+        $username = mysqli_escape_string($conn, $user['user_name']);
+
+        // 5. define the query
+        $query = "
+            SELECT
+                id
+            FROM
+                tbl_users
+            WHERE
+                id = '{$id}'
+            AND
+                user_name = '{$username}'
+        ";
+
+        // 6. ask SQL to try the query
+        $result = mysqli_query($conn, $query);
+
+        // 7. disconnect from the database
+        disconnect_from_db($conn);
+
+        // 8. return TRUE if we have one row
+        // FALSE if the details didn't match (0 rows)
+        return mysqli_num_rows($result) == 1;
+
+
+    }
+
+    // SELECT: retrieve the user's password
+    function get_password($username) {
+
+        // 1. connect to the database
+        $conn = connect_to_db();
+
+        // 2. protect the variables for the query
+        $username = mysqli_escape_string($conn, $username);
+
+        // 3. define the query
+        $query = "
+            SELECT user_password
+            FROM tbl_users
+            WHERE user_name='{$username}'
+        ";
+
+        // 4. ask SQL to try the query
+        $result = mysqli_query($conn, $query);
+
+        // 5. disconnect from the database
+        disconnect_from_db($conn);
+
+        // 6. tell PHP what happened
+        if (mysqli_num_rows($result) != 1) {
+            // if there is not one result, the email does not exist
+            return FALSE;
+        } else {
+            // retrieve the first result as an array
+            $result = mysqli_fetch_assoc($result);
+
+            // return just the password
+            return $result['user_password'];
+        }
+
+    }
+
+    function get_user_from_username($username) {
+
+        // 1. connect to the database
+        $conn = connect_to_db();
+
+        // 2. protect the variables
+        $username = mysqli_escape_string($conn, $username);
+
+        // 3. define the query
+        $query = "
+            SELECT
+                *
+            FROM
+                tbl_users
+            WHERE
+                user_name = '{$username}'
+        ";
+
+        // 4. ask SQL to try the query
+        $result = mysqli_query($conn, $query);
+
+        // 5. disconnect from the database
+        disconnect_from_db($conn);
+
+        // 6. send back the data if there's any
+        if (mysqli_num_rows($result) != 1) {
+            // something went wrong, just send a false
+            return FALSE;
+        } else {
+            // return the first result, it's the only one
+            return mysqli_fetch_assoc($result);
+        }
+
+    }
+
+
 
 
 

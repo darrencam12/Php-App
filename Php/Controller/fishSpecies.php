@@ -1,5 +1,10 @@
 <?php
 include("functions.php");
+
+if (!check_login()) {
+    header('Location:login.php');
+}
+
 include("fish-process.php");
 include("header.php");
  ?>

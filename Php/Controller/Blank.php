@@ -1,5 +1,12 @@
  <?php
+ include("functions.php");
+
+ if (!check_login()) {
+     header('Location:login.php');
+ }
+
    include("header.php");
+
 
       $conn = mysqli_connect("localhost", "root", "", "db_fish_species")
         or die("unable to connect");

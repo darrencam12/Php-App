@@ -1,4 +1,9 @@
 <?php
+
+if (!check_login()) {
+    header('Location:login.php');
+}
+
 include("header.php");
  ?>
    <h2 class="titletext"><Strong>Sponsors</strong></h2>
@@ -44,7 +49,7 @@ include("header.php");
                        <div class="sponsorEditbtn">
                             <button type="button" id="sponsorbtn2"class="btn btn-default"><strong>Delete</strong></button>
                        </div>
-                       
+
                    </div>
                    <div class="col-lg-2">
                    </div>

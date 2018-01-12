@@ -2,6 +2,10 @@
 include("header.php");
 include("functions.php");
 
+if (!check_login()) {
+    header('Location:login.php');
+}
+
 $showreport = show_report();
 $showorders = show_orders();
  ?>

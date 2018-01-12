@@ -55,6 +55,11 @@
           </div>
 
           <div class="titleheader">
+
+              <div id="menubutton">
+               <a href="logout.php" class="btn btn-secondary">Logout</a>
+              </div>
+
             <div id="menubutton">
               <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
 
