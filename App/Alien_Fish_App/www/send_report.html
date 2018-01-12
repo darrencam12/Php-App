@@ -22,10 +22,70 @@
 <div class="pages">
     <div data-page="send_report" class="page">
         <div class="page-content">
+            <form>
             <div class="content-block">
-                <form >
 
-                    <div class="row">
+                <div class="row">
+                    <div class="col-100"><input type="text" name="Name" placeholder="Name" ></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100"><input type="text" name="Surname" placeholder="Surname"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100"><input type="email" name="Email" placeholder="Email"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100"><input type="number" name="Phone Number" placeholder="Contact Number"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100"><textarea name="Describe" rows="10" cols="24" placeholder="Describe the look of the fish" ></textarea> </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100"><label for="input-date">Date of Capture:</label></div>
+                    <div class="col-100"><input type="date" name="Date" placeholder="Date of Capture"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100"><input type="text" name="Location" placeholder="Location where fish was captured"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-50"><label for="input-frozen">Is the fish frozen:</label></div>
+                    <div class="col-50">
+                        <div class="yn">
+                            <input type="radio" name="gender" value="male"> Yes
+                            <input type="radio" name="gender" value="female"> No
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100">
+                        <label for="input-donation">Are you willing to donate or sell to
+                        the fish you caught to the University:</label>
+                    </div>
+
+                    <div class="col-50"></div>
+                    <div class="col-50">
+                        <div class="yn">
+                            <input type="radio" name="gender" value="male"> Yes
+                            <input type="radio" name="gender" value="female"> No
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-100"><input type="submit" class="button button-fill" value="Submit"></div>
+                </div>
+
+                    <!--<div class="row">
                         <div class="col-45"><label for="input-name">Name:</label></div>
                         <div class="col-55"><input type="text" name="Name" placeholder="John" ></div>
                     </div>
@@ -47,7 +107,7 @@
 
                     <div class="row">
                         <div class="col-45"><label for="input-description">Describe Species:</label></div>
-                        <div class="col-55"><textarea name="Describe" rows="10" cols="22" placeholder="Rounded shape with stripes on it's side" ></textarea> </div>
+                        <div class="col-55"><textarea name="Describe" rows="10" cols="20" placeholder="Rounded shape with stripes on it's side" ></textarea> </div>
                     </div>
 
                     <div class="row">
@@ -61,26 +121,38 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-50"><label for="input-frozen">Is species frozen:</label></div>
-                        <div class="col-50">
-                            <input type="radio" name="gender" value="male"> Yes
-                            <input type="radio" name="gender" value="female"> No
+                        <div class="col-45"><label for="input-frozen">Is species frozen:</label></div>
+                        <div class="col-55">
+                            <div class="yn">
+                                <input type="radio" name="gender" value="male"> Yes
+                                <input type="radio" name="gender" value="female"> No
+                            </div>
+
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class=><label for="input-donation">Are you willing to donate or sell to
-                        the fish you caught to the University:</label></div>
-                        <div class="">
-                                <input type="radio" name="gender" value="male"> <p>Yes</p>
-                                <input type="radio" name="gender" value="female"> No
+                        <div class="col-100">
+                            <label for="input-donation">Are you willing to donate or sell to
+                            the fish you caught to the University:</label>
                         </div>
+                        <div class="col-50"></div>
+                        <div class="col-50">
+                            <div class="yn">
+                                <input type="radio" name="gender" value="male"> Yes
+                                <input type="radio" name="gender" value="female"> No
+                            </div>
+                        </div>
+
+
+
+
                     </div>
 
                     <div class="row">
                         <div class="col-50"></div>
                         <div class="col-50"><input type="submit" class="button button-fill" value="Submit"></div>
-                    </div>
+                    </div>-->
 
 
 
