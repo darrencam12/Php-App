@@ -51,6 +51,9 @@
                   <li>
                       <a href="sponsors.php"><Strong>Sponsors</strong></a>
                   </li>
+                  <li>
+                      <a href="admin.php"><Strong>Admin</strong></a>
+                  </li>
                   </ul>
           </div>
 

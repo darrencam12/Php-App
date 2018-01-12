@@ -1,5 +1,6 @@
 <?php
 
+include("functions.php");
 if (!check_login()) {
     header('Location:login.php');
 }

@@ -1,5 +1,4 @@
 <?php
-include("functions.php");
 
 include("header.php");
  ?>
@@ -10,23 +9,20 @@ include("header.php");
         <div class="row">
           <div class="container-fluid">
             <div class="col-lg-3">
-
-
-              <form enctype="multipart/form-data" action="login-process.php" method="post">
+              <form enctype="multipart/form-data" action="register-process.php" method="post">
                     <div class="form-group">
-                          <label for="input-user">Username:</label>
-                          <input type="text" class="form-control" name="userName"placeholder="Username"id="input-user">
+                          <label for="userName">Username:</label>
+                          <input type="text" class="form-control" name="userName"placeholder="Waka"id="input-user">
                      </div>
 
                       <div class="form-group">
-                          <label for="input-password">Password:</label>
+                          <label for="password">Password:</label>
                           <input type="password" class="form-control"name="password" placeholder="password"id="input-password">
-                            <a href="register.php">Register</a>
                       </div>
-
-                  <button type="submit"class="btn btn-primary ">login</button>
+                  <button type="submit"class="btn btn-primary ">Register</button>
                 </form>
             </div>
+
 
 
         </div>
