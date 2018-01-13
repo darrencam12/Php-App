@@ -14,17 +14,21 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-    /*$$('#open-camera').click(function(){
+    /**/
+
+});
+
+myApp.onPageInit('send_report', function() {
+    $$('#open-camera').click(function(){
         navigator.camera.getPicture(
             function(imageURI){
-                $$('#camera-image').attr.('src', imageURI);
+                $$('#camera-image').attr('src', imageURI);
             },
             function(message){
                 alert("Failed because:" + message );
             }
         );
-    )};*/
-
+    });
 });
 
 

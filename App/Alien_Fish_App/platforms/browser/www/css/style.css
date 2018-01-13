@@ -10,7 +10,7 @@
 
 .views .navbar-inner p {
     font-size: 1.4em;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .views .page-content {
@@ -28,10 +28,6 @@
 #menu .content-block {
     color: #ffffff;
     margin-top: 10em;
-}
-
-#menu .content-block p {
-    font-weight: normal;
 }
 
 #menu .content-block img .fsh-icn {
@@ -62,6 +58,7 @@
     font-size: 1.5em;
     text-align: center;
     margin: 1.4em 1em;
+    font-weight: 300;
 }
 
 form .row {
@@ -132,14 +129,14 @@ form .row .radio {
 .fish_names {
     color: #005B94;
     font-size: 1.5em;
-    font-weight: 250;
+    font-weight: 300;
     text-align: center;
 }
 
 .fish_info {
     color: #005B94;
     font-size: 1.2em;
-    font-weight: 150;
+    font-weight: 300;
     padding: .5em;
 }
 
@@ -158,13 +155,14 @@ form .row .radio {
     font-size: 2.5em;
     text-align: center;
     color: #005B94;
+    font-weight: 300;
 }
 
 .floating-button {
     background-color: #005B94;
 }
 
-.floating-button .active-state {
+.floating-button:hover, .floating-button:focus, .floating-button:active {
     background-color: #005B94;
 }
 
@@ -178,5 +176,5 @@ form .row .radio {
 
 .speed-dial-opened .floating-button {
     transform: rotate(45deg);
-    transition: .1s;
+    transition: background-color .1s ease-in-out;
 }
