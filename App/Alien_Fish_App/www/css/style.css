@@ -162,7 +162,7 @@ form .row .radio {
     background-color: #005B94;
 }
 
-.floating-button .active-state {
+.floating-button:hover, .floating-button:focus, .floating-button:active {
     background-color: #005B94;
 }
 
@@ -176,5 +176,5 @@ form .row .radio {
 
 .speed-dial-opened .floating-button {
     transform: rotate(45deg);
-    transition: .1s;
+    transition: background-color .1s ease-in-out;
 }

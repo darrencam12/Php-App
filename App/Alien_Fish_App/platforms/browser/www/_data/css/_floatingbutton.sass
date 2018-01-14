@@ -2,7 +2,7 @@
 
 .floating-button
     background-color: #005B94
-    .active-state
+    &:hover, &:focus, &:active
         background-color: #005B94
 
 .speed-dial-buttons
@@ -14,4 +14,4 @@
 .speed-dial-opened
     .floating-button
         transform: rotate(45deg)
-        transition: .1s
+        transition: background-color .1s ease-in-out
