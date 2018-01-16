@@ -27,71 +27,113 @@ $showreport = show_report($_GET['user']);
 
          <!-- Reports list-->
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-1">
-          </div>
-          <div class="col-lg-10">
-            <form action="/action_page.php">
-              <div class="form-group">
-                <label for="name">Name:</label>
-                <p><?=$assoc['rpt_Name']?></p>
-              </div>
-              <div class="form-group">
-                <label for="surname">Surname:</label>
-                <p><?=$assoc['rpt_Surname']?></p>
 
-              </div>
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <p><?=$assoc['rpt_Email']?></p>
+          <form action="/action_page.php">
+            <a href="report.php"class="btn btn-default" id="posterbackbtn"><strong>Go Back</strong></a>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?=$assoc['rpt_Name']?> <?=$assoc['rpt_Surname']?></td>
+                  </tr>
+                </tbody>
 
-              </div>
+                <thead>
+                  <tr>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?=$assoc['rpt_Email']?></td>
+                  </tr>
+                </tbody>
 
-              <div class="form-group">
-                <label for="number">Phone Number:</label>
-                <p><?=$assoc['rpt_PhoneNo']?></p>
+                <thead>
+                  <tr>
+                    <th>Phone No.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?=$assoc['rpt_PhoneNo']?></td>
+                  </tr>
+                </tbody>
 
-              </div>
+                <thead>
+                  <tr>
+                    <th>Photo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><img src="Images\600x400.png" id="formimage"alt="img"></td>
+                  </tr>
+                </tbody>
 
-              <div class="form-group">
-                <label for="photo">Photo:</label>
-                <img src="Images\600x400.png" id="formimage"alt="img">
-              </div>
+                <thead>
+                  <tr>
+                    <th>Fish Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> ADNA MA MINIJIEX HAQ GHAL MADONNAAAAA</td>
+                  </tr>
+                </tbody>
 
-              <div class="form-group">
-                <label for="describe">Describe Fish:</label>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?=$assoc['rpt_Date']?></td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th>Location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?=$assoc['rpt_Location']?></td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th>Fish preservation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?php if($assoc['rpt_Preserved'] == 1){ echo "Yes"; }else{ echo "No";}?></td>
+                  </tr>
+                </tbody>
 
 
-              </div>
 
-              <div class="form-group">
-                <label for="date">Date:</label>
-                <p><?=$assoc['rpt_Date']?></p>
+                <thead>
+                  <tr>
+                    <th>Willing to donate or sell to the univercity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?php if($assoc['rpt_Donate'] == 1){ echo "Yes"; }else{ echo "No";}?></td>
+                  </tr>
+                </tbody>
 
-              </div>
+                <thead>
 
-              <div class="form-group">
-                <label for="location">location:</label>
-                <p><?=$assoc['rpt_Location']?></p>
+              </table>
 
-              </div>
-
-              <div class="form-group">
-                <label for="describe">Fish preservation:</label>
-                <p><?=$assoc['rpt_Preserved']?></p>
-
-              </div>
-              <div class="form-group">
-                <label for="describe">Are you willing to donate or sell to the univercity</label>
-                <p><?=$assoc['rpt_Donate']?></p>
-
-              </div>
-
-
-
-
-
-            </div>
           </form>
           </div>
           <div class="col-lg-1">
