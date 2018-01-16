@@ -1,11 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Alien_Fish_App</name>
+<widget id="edu.mcast.alienfish" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Spot The Alien Fish</name>
     <description>
-        A basic Framework7 template for PhoneGap.
+        Spot the Alien Fish is an informative app on alien fish species that can be found mainly around the Maltese waters and the Mediterranean.
+
+        Features on app Spot the Alien Fish app include:
+	        Getting information on each alien fish species.
+	        Sending a report if a fish was sighted or captured.
+            Sending an image with the report of the captured fish.
+	        Ordering a poster on the different alien fish species.
+
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="alan.deidun@gmail.com" href="http://www.aliensmalta.eu/">
+        Yannick Farrugia and Darren Camilleri (MCAST ICA)
     </author>
     <content src="index.html" />
     <access origin="*" />
