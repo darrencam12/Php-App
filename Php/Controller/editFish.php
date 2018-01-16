@@ -12,6 +12,7 @@
 
       $fish = get_fish($_GET['id']);
       $assoc = mysqli_fetch_assoc($fish);
+      $description = file_get_contents("fish_descriptions/{$_GET['id']}.txt");
 
       if ($assoc == NULL) {
           die('This fish does not exist!');
@@ -68,7 +69,8 @@
               </div>
               <div class="form-group">
                  <label for="comment">Desciption:</label>
-                 <textarea class="form-control" rows="5" id="comment"></textarea>
+                 <label><?php?></label>
+                 <textarea class="form-control" rows="5" name="message"><?php echo $description; ?></textarea>
               </div>
 
               <input type="hidden" name="fishid" value="<?=$assoc['id']?>">

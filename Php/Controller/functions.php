@@ -150,7 +150,6 @@
       return $result;
     }
 
-
   function show_report($id = NULL){
       // connect to the database;
       $conn = connect_to_db();
@@ -176,7 +175,6 @@
       // give back the end result
       return $result;
   }
-
 
   function show_orders(){
       // connect to the database;

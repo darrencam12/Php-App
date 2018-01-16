@@ -12,6 +12,7 @@
     $fishname = $_POST['fishname'];
     $fishsname = $_POST['fishsname'];
     $forigin = $_POST['forigin'];
+    $message = $_POST['message'];
     if(isset($_POST['ftoxic'])) $ftoxic = 1; else $ftoxic = 0;
     if(isset($_POST['fvenomous'])) $fvenomous = 1; else $fvenomous = 0;
 
@@ -34,6 +35,13 @@
           if (!move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
               die("Could not upload the image file.");
           }
+
+
+      $myfile = fopen("fish_descriptions/$id.txt", "w") or die("Unable to create desciption");
+      $txt = $message;
+      fwrite($myfile,$txt);
+      fclose($myfile);
+      header('Location:fish.php');
 
           /*
             $images = glob("{$id}.*"); // this will give me all files that are linked to the id in the table

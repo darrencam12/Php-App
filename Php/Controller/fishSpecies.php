@@ -80,7 +80,7 @@ include("header.php");
           </div>
           <div class="form-group">
              <label for="comment">Desciption:</label>
-             <textarea class="form-control" rows="5" id="comment"></textarea>
+             <textarea class="form-control" name="message" rows="5"></textarea>
           </div>
 
             <button type="submit" id="fishimageeditbtn" class="btn btn-primary btn-lg"><strong>Add Fish</strong></button>

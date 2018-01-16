@@ -14,10 +14,15 @@ include "functions.php";
     $file = "uploaded_imgs/{$_GET["id"]}.*";
     array_map("unlink", glob($file));
 
+    $file = "fish_descriptions/{$_GET["id"]}.*";
+    array_map("unlink", glob($file));
+
     if ($result != TRUE){
         echo $result;
     }else{
         header("Location:fish.php");
     }
+
+
 
  ?>

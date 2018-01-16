@@ -14,6 +14,8 @@
         $forigin = $_POST['forigin'];
         $ftoxic = (isset($_POST['ftoxic'])) ? $_POST['ftoxic'] : 0;
         $fvenomous = (isset($_POST['fvenomous'])) ? $_POST['fvenomous'] : 0;
+        $description = $_POST['message'];
+
 
 
         if(empty($_ERRORS)){
@@ -35,10 +37,16 @@
               $filename = "uploaded_imgs/{$fishid}.{$ext}";
 
               if (!move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
-                  die("Could not upload the image file.");
+                  header('Location:fish.php');
               }
         }
       }
+      $myfile = fopen("fish_descriptions/$fishid.txt", "w") or die("Unable to create desciption");
+      $txt = $description;
+      fwrite($myfile,$txt);
+      fclose($myfile);
+      header('Location:fish.php');
+
   }
 
  ?>

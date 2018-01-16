@@ -41,9 +41,6 @@ include('upload.php');
              <a href="PosterOrders.php"class="btn btn-default" id="posterbtn2"><strong>Show Sent/Pending</strong></a>
 
 
-
-
-
      </div>
    </div>
  <?php
