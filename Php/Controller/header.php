@@ -48,9 +48,9 @@
                   <!--<li>
                       <a href="about.php"><Strong>About Us</strong></a>
                   </li>-->
-                  <li>
+                <!--  <li>
                       <a href="sponsors.php"><Strong>Sponsors</strong></a>
-                  </li>
+                  </li> -->
                   <li>
                       <a href="admin.php"><Strong>Admin</strong></a>
                   </li>
