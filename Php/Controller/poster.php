@@ -3,7 +3,7 @@ include("functions.php");
 if (!check_login()) {
     header('Location:login.php');
 }
-
+include("poster-process.php");
 include("header.php");
 include('upload.php');
  ?>
@@ -12,13 +12,25 @@ include('upload.php');
  <div id="page-content-wrapper">
      <div class="container-fluid">
 
+<?php
+    // retrieves all the images that match the criteria
+      $images = glob("uploaded_imgs/poster.*");
+
+      // if there are any images on the disk, we can use it.
+      if (count($images) > 0) {
+          $images = $images[0];
+      } else {
+          $images = 'Images\600x400.png';
+      }
+?>
+
        <!-- Reports list-->
        <div class="row">
          <div class="col-lg-4">
          </div>
          <div class="col-lg-5">
            <div id="postercontainer">
-             <img src="Images\600x400.png" id="PosterImage"alt="img">
+             <img src="<?=$images?>" id="PosterImage"alt="img">
            </div>
 
              <form action="" enctype="multipart/form-data" method="post">
