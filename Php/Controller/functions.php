@@ -75,7 +75,45 @@
 
   }
 
+  function check_fish($id,$fishname,$fishsname,$forigin,$ftoxic,$fvenomous){
+
+    // connection to the database
+    $conn = connect_to_db();
+
+    $id = mysqli_escape_string($conn,$id);
+    $fishname = mysqli_escape_string($conn,$fishname);
+    $fishsname = mysqli_escape_string($conn,$fishsname);
+    $forigin = mysqli_escape_string($conn,$forigin);
+    $ftoxic = mysqli_escape_string($conn,$ftoxic);
+    $fvenomous = mysqli_escape_string($conn,$fvenomous);
+
+    $query ="
+        SELECT *
+        FROM tbl_fish
+          WHERE
+              fsh_FishName = '{$fishname}' AND
+              fsh_ScientificName = '{$fishsname}' AND
+              fsh_Origin = '{$forigin}' AND
+              fsh_toxic = '{$ftoxic}' AND
+              fsh_Venomous = '{$fvenomous}' AND
+              id = '{$id}'
+          ";
+
+    // get the results to check that the query matches
+      $result  = mysqli_query($conn,$query);
+
+      // disconnect because the query is done
+      disconnect_from_db($conn);
+
+      // check the number of rows, and return TRUE or FALSE if the result is one.
+      return mysqli_num_rows($result) == 1;
+    }
+
   function edit_fish($id,$fishname,$fishsname,$forigin,$ftoxic,$fvenomous){
+
+     if (check_fish($id,$fishname,$fishsname,$forigin,$ftoxic,$fvenomous)) {
+         return TRUE;
+     }
 
     // connection to the database
     $conn = connect_to_db();
@@ -139,28 +177,6 @@
       return $result;
   }
 
-  /*function get_report($id){
-    // connect to the database;
-    $conn = connect_to_db();
-
-    // defining a query
-    $id = mysqli_escape_string($conn,$id);
-
-    $query = "
-      SELECT * FROM `tbl_report`
-      WHERE (ID)='{$id}'
-      ";
-
-      $result = mysqli_query($conn,$query);
-
-
-      if(mysqli_num_rows($result)!=1){
-        return FALSE;
-      }else {
-          return mysqli_fetch_assoc($result);
-        }
-        disconnect_from_db($conn);
-      }*/
 
   function show_orders(){
       // connect to the database;
@@ -432,6 +448,12 @@
         return $result;
       }
 
+/*function delete_image($id){
+  $file = "uploaded_imgs/$id.*";
+    if (array_map("unlink", glob($file))){
+        echo "sucess";
+    }
+}*/
 
 
 

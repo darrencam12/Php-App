@@ -8,7 +8,6 @@
         foreach ($_POST as $key => $value) {
           $_FORM[$key] = htmlspecialchars($value);
         }
-
         $fishid = $_POST['fishid'];
         $fishname = $_POST['fishname'];
         $fishsname = $_POST['fishsname'];
@@ -25,7 +24,21 @@
             die;
           }
 
+          if (isset($_FILES['file'])) {
+
+              $file = "uploaded_imgs/{$fishid}.*";
+              array_map("unlink", glob($file));
+
+              # fix the folder's permissions to allow upload
+              chmod('uploaded_imgs', 0777);
+              $ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+              $filename = "uploaded_imgs/{$fishid}.{$ext}";
+
+              if (!move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
+                  die("Could not upload the image file.");
+              }
         }
       }
+  }
 
  ?>

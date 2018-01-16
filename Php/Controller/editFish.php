@@ -49,7 +49,7 @@
 
              <!--this is for the image input-->
               <h5><strong>Change Image:</strong></h5>
-              <input type="file" name="image"class="form-control-file"id="FormControlFileImages"/>
+              <input type="file" name="file"class="form-control-file"id="FormControlFileImages"/>
 
               <div class="row">
                 <div class="container-fluid">
