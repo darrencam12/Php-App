@@ -69,7 +69,7 @@ include("header.php");
                 <div class="form-check">
                   <h5><strong>Danger of Fish</strong></h5>
                   <div>
-                    <input type="checkbox" name="fvenomous"> Venomous
+                  <input type="checkbox" name="fvenomous"> Venomous
                   </div>
                   <div>
                     <input type="checkbox" name="ftoxic"> toxic

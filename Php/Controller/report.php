@@ -1,6 +1,12 @@
  <?php
  include("functions.php");
 
+ $timestamp = strtotime('2018-1-10');
+ echo $timestamp;
+ echo "<br>";
+ echo date('d M, Y', $timestamp);
+ die;
+
  if (!check_login()) {
      header('Location:login.php');
  }
@@ -53,24 +59,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($archive as $user){
-                            $rows =
-                            "<tr>
-                            <td>$user[0]</td>
-                            <td>$user[1]</td>
-                            <td>$user[2]</td>
-                            <td>$user[3]</td>
-                            <td>$user[4]</td>
-                            <td>$user[5]</td>
-                            <td>$user[6]</td>";
-
-                          $rows.="<td><a class='btn btn-primary' href='singlereport.php?user=".$user[0]."'>View</a></td>";
-                          $rows.="<td><a class='btn btn-primary' href='Checked.php?user=".$user[0]."'>Archive User</a></td>";
-
-                            $rows.="</tr>";
-                            echo $rows;
-                          ;
-                        }?>
+                        <?php foreach($archive as $user):?>
+                            <tr>
+                              <td><?=$user[0]?></td>
+                              <td><?=$user[1]?></td>
+                              <td><?=$user[2]?></td>
+                              <td><?=$user[3]?></td>
+                              <td><?=$user[4]?></td>
+                              <td><?=$user[5]?></td>
+                              <td><?=$user[6]?></td>
+                              <td><a class='btn btn-primary' href='singlereport.php?user=<?=$user[0]?>'>View</a></td>
+                              <td><a class='btn btn-primary' href='Checked.php?user=<?=$user[0]?>'>Archive User</a></td>
+                            </tr>
+                        <?php endforeach; ?>
                         </tbody>
                      </table>
 
