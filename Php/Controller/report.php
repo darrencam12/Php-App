@@ -1,11 +1,12 @@
  <?php
  include("functions.php");
 
+//this code is for the date conversion for the report page.
  $timestamp = strtotime('2018-1-10');
- echo $timestamp;
- echo "<br>";
- echo date('d M, Y', $timestamp);
- die;
+ //echo $timestamp;
+ //echo "<br>";
+ //echo date('d M, Y', $timestamp);
+ //die;
 
  if (!check_login()) {
      header('Location:login.php');
@@ -66,8 +67,8 @@
                               <td><?=$user[2]?></td>
                               <td><?=$user[3]?></td>
                               <td><?=$user[4]?></td>
-                              <td><?=$user[5]?></td>
-                              <td><?=$user[6]?></td>
+                              <td><?=date('d M, Y', $user[6])?></td>
+                              <td><?=$user[7]?></td>
                               <td><a class='btn btn-primary' href='singlereport.php?user=<?=$user[0]?>'>View</a></td>
                               <td><a class='btn btn-primary' href='Checked.php?user=<?=$user[0]?>'>Archive User</a></td>
                             </tr>

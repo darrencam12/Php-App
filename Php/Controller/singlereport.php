@@ -22,6 +22,12 @@ $showreport = show_report($_GET['user']);
 
 <?php
           while ($assoc = mysqli_fetch_assoc($showreport)):
+            $images = glob("uploaded_imgs/{$assoc['ID']}.*");
+            if(count($images)== 0 ){
+              $images = "defaultpic.jpg";
+            }else{
+              $images = $images[0];
+            }
 
 ?>
 
@@ -71,7 +77,7 @@ $showreport = show_report($_GET['user']);
                 </thead>
                 <tbody>
                   <tr>
-                    <td><img src="Images\600x400.png" id="formimage"alt="img"></td>
+                    <td><img src="<?=$images?>" id="formimage"alt="img"></td>
                   </tr>
                 </tbody>
 
@@ -82,7 +88,7 @@ $showreport = show_report($_GET['user']);
                 </thead>
                 <tbody>
                   <tr>
-                    <td> ADNA MA MINIJIEX HAQ GHAL MADONNAAAAA</td>
+                    <td> <?=$assoc['rpt_descrpition']?></td>
                   </tr>
                 </tbody>
 
@@ -93,7 +99,8 @@ $showreport = show_report($_GET['user']);
                 </thead>
                 <tbody>
                   <tr>
-                    <td><?=$assoc['rpt_Date']?></td>
+                    <td><?=date('Y-n-d', $assoc['rpt_Date'])?></td>
+
                   </tr>
                 </tbody>
                 <thead>
@@ -121,7 +128,7 @@ $showreport = show_report($_GET['user']);
 
                 <thead>
                   <tr>
-                    <th>Willing to donate or sell to the univercity</th>
+                    <th>Willing to donate or sell to the university</th>
                   </tr>
                 </thead>
                 <tbody>
