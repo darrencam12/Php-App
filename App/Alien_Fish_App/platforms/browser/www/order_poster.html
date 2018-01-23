@@ -20,7 +20,7 @@
     </div>
 </div>
 <div class="pages">
-    <div data-page="order_poster" class="page">
+    <div data-page="order_poster" id="poster" class="page">
         <div class="page-content">
             <div class="content-block">
 
@@ -30,19 +30,19 @@
 
                 <form>
                     <div class="row">
-                        <div class="col-100"><input type="text" name="Name" placeholder="Name" ></div>
+                        <div class="col-100"><input type="text" name="Name" placeholder="Name" required ></div>
                     </div>
 
                     <div class="row">
-                        <div class="col-100"><input type="text" name="Surname" placeholder="Surname"></div>
+                        <div class="col-100"><input type="text" name="Surname" placeholder="Surname" required></div>
                     </div>
 
                     <div class="row">
-                        <div class="col-100"><input type="email" name="Email" placeholder="Address"></div>
+                        <div class="col-100"><input type="text" name="Address" placeholder="Address" required></div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-100"><input type="submit" class="button" value="Submit"></div>
+                    <div class="btn">
+                        <div class="col-100"><input type="submit" class="button button-big button-fill" value="Submit"></div>
                     </div>
 
                 </form>
