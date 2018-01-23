@@ -20,32 +20,41 @@
     </div>
 </div>
 <div class="pages">
-    <div data-page="send_report" class="page">
+    <div data-page="send_report"  class="page">
         <div class="page-content">
             <form>
             <div class="content-block">
 
                 <div class="row">
-                    <div class="col-100"><input type="text" name="Name" placeholder="Name" ></div>
+                    <div class="col-100"><input type="text" name="Name" placeholder="Name" required></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-100"><input type="text" name="Surname" placeholder="Surname"></div>
+                    <div class="col-100"><input type="text" name="Surname" placeholder="Surname" required></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-100"><input type="email" name="Email" placeholder="Email"></div>
+                    <div class="col-100"><input type="email" name="Email" placeholder="Email" required></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-100"><input type="number" name="Phone Number" placeholder="Contact Number"></div>
+                    <div class="col-100"><input type="number" name="Phone Number" placeholder="Contact Number" required></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-100"><label for="input-picture">Take photo of fish:</label></div>
-                    <div class="col-50"> <button type="button" class="button button-fill" id="open-camera" name="button"> Open Camera </button> </div>
-                    <div class="col-50"> <img src="" id="camera-image" alt=""> </label></div>
+                    <div class="col-100"><label for="input-picture">Upload photo of fish:</label></div>
+                    <div class="col-50" id="open-camera">
+                        <div style="color: #0b497c; padding:.5em"> <i class="fas fa-camera" >  </i> Take photo </div>
+                    </div>
+                    <div class="col-50" id="open-gallery">
+                        <div style="color: #0b497c; padding:.5em"> <i class="fas fa-image" >  </i> Choose </div>
+                    </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-50"> <img src="" id="camera-image" alt=""></div>
+                </div>
+
 
                 <div class="row">
                     <div class="col-100"><textarea name="Describe" rows="10" cols="24" placeholder="Describe the look of the fish" ></textarea> </div>
@@ -57,38 +66,40 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-100"><input type="text" name="Location" placeholder="Location where fish was captured"></div>
+                    <div class="col-100"><input type="text" name="Location" placeholder="Location where fish was captured" required></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-50"><label for="input-frozen">Is the fish frozen:</label></div>
+                    <div class="col-50"><label for="input-frozen">Is fish frozen:</label></div>
                     <div class="col-50">
                         <div class="radio">
-                            <input type="radio" name="gender" value="male"> Yes
-                            <input type="radio" name="gender" value="female"> No
+                            <input type="radio" name="frozen" value="yes"> Yes
+                            <input type="radio" name="frozen" value="no"> No
                         </div>
-
                     </div>
+
                 </div>
+
 
                 <div class="row">
                     <div class="col-100">
-                        <label for="input-donation">Are you willing to donate or sell to
+                        <label for="input-donation">Are you willing to donate or sell
                         the fish you caught to the University:</label>
                     </div>
 
                     <div class="col-50"></div>
                     <div class="col-50">
                         <div class="radio">
-                            <input type="radio" name="gender" value="male"> Yes
-                            <input type="radio" name="gender" value="female"> No
+                            <input type="radio" name="donation" value="yes"> Yes
+                            <input type="radio" name="donation" value="no"> No
                         </div>
                     </div>
 
                 </div>
 
-                <div class="row">
-                    <div class="col-100"><input type="submit" class="button button-fill" value="Submit"></div>
+
+                <div class="btn">
+                    <div class="col-100"><input type="submit" class="button button-big button-fill" value="Submit"></div>
                 </div>
 
 

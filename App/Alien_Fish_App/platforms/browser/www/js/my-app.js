@@ -1,5 +1,5 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({pushState:true, swipePanel: 'left'});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -26,6 +26,23 @@ myApp.onPageInit('send_report', function() {
             },
             function(message){
                 alert("Failed because:" + message );
+            },
+            {
+                sourceType: Camera.PictureSourceType.CAMERA
+            }
+        );
+    });
+
+    $$('#open-gallery').click(function(){
+        navigator.camera.getPicture(
+            function(imageURI){
+                $$('#camera-image').attr('src', imageURI);
+            },
+            function(message){
+                alert("Failed because:" + message );
+            },
+            {
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY
             }
         );
     });
