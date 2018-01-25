@@ -6,8 +6,11 @@ if (!check_login()) {
     header('Location:login.php');
 }
 
+
 $showreport = show_report();
 $showorders = show_orders();
+
+$timestamp = strtotime('2018-1-10');
  ?>
 
         <!-- Page Content -->
