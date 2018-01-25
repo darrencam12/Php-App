@@ -61,7 +61,7 @@ include("header.php");
 
           </div>
           <h5><strong>Add Image</strong></h5>
-          <input type="file" name="file" class="form-control-file" id="FormControlFileImages"  accept=".png, .gif, .jpg"/>
+          <input type="file" name="file" class="form-control-file" id="FormControlFileImages"  accept=".png, .jpeg, .jpg"/>
 
           <div class="row">
             <div class="container-fluid">

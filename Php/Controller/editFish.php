@@ -50,7 +50,7 @@
 
              <!--this is for the image input-->
               <h5><strong>Change Image:</strong></h5>
-              <input type="file" name="file"class="form-control-file"id="FormControlFileImages"/>
+              <input required type="file" name="file"class="form-control-file"id="FormControlFileImages" accept=".png, .jpeg, .jpg"/>
 
               <div class="row">
                 <div class="container-fluid">

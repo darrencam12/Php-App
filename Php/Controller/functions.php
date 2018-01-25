@@ -446,6 +446,28 @@
         return $result;
       }
 
+  function get_all_fish(){
+    // connect to the database;
+    $conn = connect_to_db();
+
+    // defining a query
+
+    $query = "
+      SELECT * FROM `tbl_fish`
+      ";
+
+
+    // asking SQL to perform the query
+    $result = mysqli_query($conn,$query);
+
+    //disconnect from the database
+    disconnect_from_db($conn);
+
+    // give back the end result
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+  }
+
 /*function delete_image($id){
   $file = "uploaded_imgs/$id.*";
     if (array_map("unlink", glob($file))){
