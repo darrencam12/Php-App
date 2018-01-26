@@ -42,12 +42,14 @@
 #menu .content-block svg {
     display: block;
     margin-right: 1em;
+    width: 1.2em;
+    height: 1.2em;
 }
 
 #menu .content-block img {
     margin-right: 1em;
-    width: 1em;
-    height: 1em;
+    width: 1.2em;
+    height: 1.2em;
 }
 
 .fish {

@@ -11,6 +11,59 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+// This function will load the timeline contents.
+function LoadTimeline() {
+    // this line finds the update template.
+    // the [0] makes sure this is not a Framework7 object.
+    var template = $$('.template')[0];
+    // here, we do everything we need
+    $$.getJSON(
+        // first, specify the URL you want to load.
+        // The update page. END WITH A COMMA
+        'http://alienfish.dev/update.php',
+
+        // next, tell Javascript what will happen if everything goes well.
+        // END WITH A COMMA after the close bracket
+        function(data) {
+
+            // we're going to loop through all the updates
+            // index will be a number, from 0 until the end
+            for (var index in data) {
+
+                // clone the DIV so that we can add it to the page.
+                var update = template.cloneNode(true);
+
+                // put the single post in a variable
+                var post = data[index];
+
+                // find each element you want to change, and replace its HTML contents
+                // user ID instead of name (use joins in PHP)
+                $$(update).find('.name').html(post['fsh_FishName']);
+
+                $$(update).find('.info').html(post['fsh_ScientificName']);
+
+
+
+                // the update content
+                //$$(update).find('.post-description').html(post['fsh_Origin']);
+
+                // finally, pin this div to the bottom of the page content
+                $$('.page-content').append(update);
+            }
+
+            // once the loop is done, hide the template div.
+            $$(template).hide();
+        },
+
+        // tell Javascript what should happen if something goes wrong
+        function(xhr, status) {
+
+            // a simple alert giving us the root of the problem
+            alert('Could not load page:' + status);
+        }
+    );
+}
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
@@ -47,6 +100,15 @@ myApp.onPageInit('send_report', function() {
         );
     });
 });
+
+myApp.onPageInit('fish_page', function() {
+    // load the timeline first, so every command is added to each post.
+    LoadTimeline();
+
+
+});
+
+
 
 
 // Now we need to run the code that will be executed only for About page.
