@@ -38,10 +38,15 @@ function LoadTimeline() {
 
                 // find each element you want to change, and replace its HTML contents
                 // user ID instead of name (use joins in PHP)
+                $$(update).attr('href', 'fish_page.html?id=' + post['id']);
                 $$(update).find('.name').html(post['fsh_FishName']);
+                $$(update).find('img').html(post['fsh_ScientificName']);
 
-                $$(update).find('.info').html(post['fsh_ScientificName']);
 
+
+
+
+                //$$(update).find('.info').html(post['fsh_ScientificName']);
 
 
                 // the update content
@@ -53,6 +58,39 @@ function LoadTimeline() {
 
             // once the loop is done, hide the template div.
             $$(template).hide();
+        },
+
+        // tell Javascript what should happen if something goes wrong
+        function(xhr, status) {
+
+            // a simple alert giving us the root of the problem
+            alert('Could not load page:' + status);
+        }
+    );
+}
+
+function loadfish(id) {
+    // this line finds the update template.
+    // the [0] makes sure this is not a Framework7 object.
+    var template = $$('.template')[0];
+    // here, we do everything we need
+    $$.getJSON(
+        // first, specify the URL you want to load.
+        // The update page. END WITH A COMMA
+        'http://alienfish.dev/update.php',
+
+        // next, tell Javascript what will happen if everything goes well.
+        // END WITH A COMMA after the close bracket
+        function(data) {
+
+            // put the single post in a variable
+            var post = data[0];
+
+            // find each element you want to change, and replace its HTML contents
+            // user ID instead of name (use joins in PHP)
+
+            $$('#fish-image').attr('src', post['img']);
+
         },
 
         // tell Javascript what should happen if something goes wrong
@@ -101,12 +139,23 @@ myApp.onPageInit('send_report', function() {
     });
 });
 
-myApp.onPageInit('fish_page', function() {
+myApp.onPageInit('fish_species', function() {
     // load the timeline first, so every command is added to each post.
     LoadTimeline();
 
 
 });
+
+
+myApp.onPageInit('fish_page', function(page) {
+    //paramater
+    $$('.id').html(page.query.id);
+    //loadfish(id);
+    //http://alienfish.dev/fish.php?id=1
+
+});
+
+
 
 
 
