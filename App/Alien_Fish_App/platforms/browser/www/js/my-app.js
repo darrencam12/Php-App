@@ -1,6 +1,6 @@
 // Initialize app
 var myApp = new Framework7({pushState:true, swipePanel: 'left'});
-
+var fishData = null;
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -11,11 +11,50 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-// This function will load the timeline contents.
-function LoadTimeline() {
+function FishList(data) {
+
     // this line finds the update template.
     // the [0] makes sure this is not a Framework7 object.
-    var template = $$('.template')[0];
+    var template = $$('.template.fish-list')[0];
+
+
+    // we're going to loop through all the updates
+    // index will be a number, from 0 until the end
+    for (var index in data) {
+
+        // clone the DIV so that we can add it to the page.
+        var update = template.cloneNode(true);
+
+        // put the single post in a variable
+        var post = data[index];
+
+        // find each element you want to change, and replace its HTML contents
+        // user ID instead of name (use joins in PHP)
+        $$(update).attr('href', 'fish_page.html?id=' + post['id']);
+        $$(update).find('.name').html(post['fsh_FishName']);
+        $$(update).find('img').html(post['fsh_ScientificName']);
+
+        //$$(update).find('.info').html(post['fsh_ScientificName']);
+
+        // the update content
+        //$$(update).find('.post-description').html(post['fsh_Origin']);
+
+        // finally, pin this div to the bottom of the page content
+        $$('.page-content').append(update);
+    }
+
+    // once the loop is done, hide the template div.
+    $$(template).hide();
+}
+
+// This function will load the timeline contents.
+function LoadFishList() {
+
+    if (fishData != null) {
+        FishList(fishData);
+        return;
+    }
+
     // here, we do everything we need
     $$.getJSON(
         // first, specify the URL you want to load.
@@ -26,38 +65,9 @@ function LoadTimeline() {
         // END WITH A COMMA after the close bracket
         function(data) {
 
-            // we're going to loop through all the updates
-            // index will be a number, from 0 until the end
-            for (var index in data) {
+            fishData = data;
+            FishList(data);
 
-                // clone the DIV so that we can add it to the page.
-                var update = template.cloneNode(true);
-
-                // put the single post in a variable
-                var post = data[index];
-
-                // find each element you want to change, and replace its HTML contents
-                // user ID instead of name (use joins in PHP)
-                $$(update).attr('href', 'fish_page.html?id=' + post['id']);
-                $$(update).find('.name').html(post['fsh_FishName']);
-                $$(update).find('img').html(post['fsh_ScientificName']);
-
-
-
-
-
-                //$$(update).find('.info').html(post['fsh_ScientificName']);
-
-
-                // the update content
-                //$$(update).find('.post-description').html(post['fsh_Origin']);
-
-                // finally, pin this div to the bottom of the page content
-                $$('.page-content').append(update);
-            }
-
-            // once the loop is done, hide the template div.
-            $$(template).hide();
         },
 
         // tell Javascript what should happen if something goes wrong
@@ -69,43 +79,36 @@ function LoadTimeline() {
     );
 }
 
-function loadfish(id) {
-    // this line finds the update template.
-    // the [0] makes sure this is not a Framework7 object.
-    var template = $$('.template')[0];
-    // here, we do everything we need
-    $$.getJSON(
-        // first, specify the URL you want to load.
-        // The update page. END WITH A COMMA
-        'http://alienfish.dev/update.php',
+function GetFishFromList(id) {
 
-        // next, tell Javascript what will happen if everything goes well.
-        // END WITH A COMMA after the close bracket
-        function(data) {
+    if (fishData == null) {
+        alert("Fish data could not be loaded.");
+        return;
+    }
 
-            // put the single post in a variable
-            var post = data[0];
-
-            // find each element you want to change, and replace its HTML contents
-            // user ID instead of name (use joins in PHP)
-
-            $$('#fish-image').attr('src', post['img']);
-
-        },
-
-        // tell Javascript what should happen if something goes wrong
-        function(xhr, status) {
-
-            // a simple alert giving us the root of the problem
-            alert('Could not load page:' + status);
+    for (var i in fishData) {
+        if (fishData[i]['id'] == id) {
+            return fishData[i];
         }
-    );
+    }
+
+    alert("Fish data could not be loaded.");
+
+}
+
+function LoadFish(id) {
+
+    var template = $$('.template.fish')[0];
+    var fish = GetFishFromList(id);
+
+    $$(template).find('.name').html(fish['fsh_FishName']);
+
 }
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-    /**/
+
 
 });
 
@@ -141,7 +144,7 @@ myApp.onPageInit('send_report', function() {
 
 myApp.onPageInit('fish_species', function() {
     // load the timeline first, so every command is added to each post.
-    LoadTimeline();
+    LoadFishList();
 
 
 });
@@ -149,7 +152,7 @@ myApp.onPageInit('fish_species', function() {
 
 myApp.onPageInit('fish_page', function(page) {
     //paramater
-    $$('.id').html(page.query.id);
+    LoadFish(page.query.id);
     //loadfish(id);
     //http://alienfish.dev/fish.php?id=1
 

@@ -1,5 +1,12 @@
 <?php
 
+function encode_image($image) {
+    $ext = pathinfo($image, PATHINFO_EXTENSION);
+    $data = file_get_contents($image);
+    $base64 = 'data:image/' . $ext . ';base64,' . base64_encode($data);
+
+    return $base64;
+}
 
   // this function will allow us to connect to the database and assign the connection to a variable
   function connect_to_db() {
