@@ -62,12 +62,12 @@ include("header.php");
 
                 <thead>
                   <tr>
-                    <th>Email</th>
+                    <th>Address</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><input required type="text" class="form-control" name="ptraddress" placeholder="email"
+                    <td><input required type="text" class="form-control" name="ptraddress" placeholder="address"
                       value="<?php if(isset($_FORM['ptraddress'])) echo $_FORM['ptraddress']?>"></td>
                   </tr>
                 </tbody>
