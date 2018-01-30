@@ -475,7 +475,79 @@
     }
 }*/
 
+function insert_report($rptname,$rptsurname,$rptemail,$rptphoneno,$rptdescription,$rptlocation,$rptpreserved,$rptdonate){
 
+  $conn = connect_to_db();
+
+
+  // protecting the variables for injection
+  $rptname = mysqli_escape_string($conn,$rptname);
+  $rptsurname = mysqli_escape_string($conn,$rptsurname);
+  $rptemail = mysqli_escape_string($conn,$rptemail);
+  $rptphoneno = mysqli_escape_string($conn,$rptphoneno);
+  $rptdescription = mysqli_escape_string($conn,$rptdescription);
+  $rptlocation = mysqli_escape_string($conn,$rptlocation);
+  $rptpreserved = mysqli_escape_string($conn,$rptpreserved);
+  $rptdonate = mysqli_escape_string($conn,$rptdonate);
+
+  // 3. define a query
+  $query ="
+  INSERT INTO tbl_report
+    (rpt_Name, rpt_Surname, rpt_Email,rpt_PhoneNo, rpt_descrpition, rpt_Location,rpt_Preserved ,rpt_Donate)
+  VALUES
+    ('{$rptname}','{$rptsurname}','{$rptemail}','{$rptphoneno}','{$rptdescription}','{$rptlocation}','{$rptpreserved}','{$rptdonate}')
+    ";
+    // 4. ask SQL to perform the query
+  $result = mysqli_query($conn, $query);
+
+  if(mysqli_affected_rows($conn)!=1){
+
+  // unsuccesfull will replace the result with an error
+  $result = "the query was not successfull: ";
+  //constantians a string with the current value
+    $result .= mysqli_error($conn);
+  }else {
+    $result = mysqli_insert_id($conn);
+  }
+    disconnect_from_db($conn);
+  // give back whatever we've ended up with
+    return $result;
+  }
+
+function insert_poster($ptrname,$ptrsurname,$ptraddress){
+
+  $conn = connect_to_db();
+
+
+  // protecting the variables for injection
+  $ptrname = mysqli_escape_string($conn,$ptrname);
+  $ptrsurname = mysqli_escape_string($conn,$ptrsurname);
+  $ptraddress = mysqli_escape_string($conn,$ptraddress);
+  $time = time();
+
+  // 3. define a query
+  $query ="
+  INSERT INTO tbl_poster
+    (ptr_Name, ptr_Surname, ptr_Address, ptr_Date)
+  VALUES
+    ('{$ptrname}','{$ptrsurname}','{$ptraddress}', '{$time}')
+    ";
+    // 4. ask SQL to perform the query
+  $result = mysqli_query($conn, $query);
+
+  if(mysqli_affected_rows($conn)!=1){
+
+  // unsuccesfull will replace the result with an error
+  $result = "the query was not successfull: ";
+  //constantians a string with the current value
+    $result .= mysqli_error($conn);
+  }else {
+    $result = mysqli_insert_id($conn);
+  }
+    disconnect_from_db($conn);
+  // give back whatever we've ended up with
+    return $result;
+  }
 
 
 
