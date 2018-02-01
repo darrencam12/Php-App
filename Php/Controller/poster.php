@@ -20,7 +20,7 @@ include('upload.php');
       if (count($images) > 0) {
           $images = $images[0];
       } else {
-          $images = 'Images\600x400.png';
+          $images = 'Images\defaultpic.jpg';
       }
 ?>
 

@@ -32,7 +32,7 @@ function FishList(data) {
         // user ID instead of name (use joins in PHP)
         $$(update).attr('href', 'fish_page.html?id=' + post['id']);
         $$(update).find('.name').html(post['fsh_FishName']);
-        $$(update).find('img').html(post['fsh_ScientificName']);
+        $$(update).find('.fimg').attr('src', post['fishimg']);
 
         //$$(update).find('.info').html(post['fsh_ScientificName']);
 
@@ -100,8 +100,15 @@ function LoadFish(id) {
 
     var template = $$('.template.fish')[0];
     var fish = GetFishFromList(id);
+    $$(template).find('.fishimg').attr('src', fish['fishimg']);
+    $$(template).find('.fname').html(fish['fsh_FishName']);
+    $$(template).find('.sname').html(fish['fsh_ScientificName']);
+    $$(template).find('.origin').html(fish['fsh_Origin']);
+    $$(template).find('.info').html(fish['fish_description']);
 
-    $$(template).find('.name').html(fish['fsh_FishName']);
+
+
+
 
 }
 
@@ -131,6 +138,7 @@ myApp.onPageInit('send_report', function() {
         navigator.camera.getPicture(
             function(imageURI){
                 $$('#camera-image').attr('src', imageURI);
+                $$('#image-upload').attr('value', imageURI);
             },
             function(message){
                 alert("Failed because:" + message );
@@ -158,7 +166,65 @@ myApp.onPageInit('fish_page', function(page) {
 
 });
 
+myApp.onPageInit('order_poster', function() {
 
+    // when the user presses send on the ajax form, we'll send the information
+    $$('form.ajax-submit').on('form:success', function(e) {
+
+        // always try a JSON command.
+        try {
+            // put the server data into a variable
+            var data = JSON.parse(e.detail.data);
+
+            // if the data exists, and it's an object
+            if (data && typeof data === "object") {
+
+                // store the form data
+                myApp.formStoreData('details', data);
+
+                // redirect the user to the timeline
+                mainView.router.loadPage({
+                    url: 'order_poster.html',
+                    reload: true
+                });
+            }
+        } catch (error) {
+            // if an error was caught, show the error.
+            alert("A problem was encountered:\n" + e.detail.data);
+        }
+    });
+});
+
+myApp.onPageInit('send_report', function() {
+
+    // when the user presses send on the ajax form, we'll send the information
+    $$('#order-form').on('form:success', function(e) {
+
+        // always try a JSON command.
+        try {
+            // put the server data into a variable
+            var data = JSON.parse(e.detail.data);
+
+            // if the data exists, and it's an object
+            if (data && typeof data === "object") {
+
+                // store the form data
+                myApp.formStoreData('details', data);
+
+                // redirect the user to the timeline
+                mainView.router.loadPage({
+                    url: 'send_report.html',
+                    reload: true
+                });
+
+                alert("yes");
+            }
+        } catch (error) {
+            // if an error was caught, show the error.
+            alert("A problem was encountered:\n" + e.detail.data);
+        }
+    });
+});
 
 
 

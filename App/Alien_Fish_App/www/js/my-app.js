@@ -138,6 +138,7 @@ myApp.onPageInit('send_report', function() {
         navigator.camera.getPicture(
             function(imageURI){
                 $$('#camera-image').attr('src', imageURI);
+                $$('#image-upload').attr('value', imageURI);
             },
             function(message){
                 alert("Failed because:" + message );
@@ -183,7 +184,7 @@ myApp.onPageInit('order_poster', function() {
 
                 // redirect the user to the timeline
                 mainView.router.loadPage({
-                    url: '.order_poster.html',
+                    url: 'order_poster.html',
                     reload: true
                 });
             }
@@ -197,7 +198,7 @@ myApp.onPageInit('order_poster', function() {
 myApp.onPageInit('send_report', function() {
 
     // when the user presses send on the ajax form, we'll send the information
-    $$('form.ajax-submit').on('form:success', function(e) {
+    $$('#order-form').on('form:success', function(e) {
 
         // always try a JSON command.
         try {
@@ -212,9 +213,11 @@ myApp.onPageInit('send_report', function() {
 
                 // redirect the user to the timeline
                 mainView.router.loadPage({
-                    url: '.send_report.html',
+                    url: 'send_report.html',
                     reload: true
                 });
+
+                alert("yes");
             }
         } catch (error) {
             // if an error was caught, show the error.
