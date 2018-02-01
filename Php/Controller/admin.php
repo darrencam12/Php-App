@@ -1,5 +1,8 @@
 <?php
+//including functions to this page
+
 include("functions.php");
+//including the process to this page
 if (!check_login()) {
     header('Location:login.php');
 }

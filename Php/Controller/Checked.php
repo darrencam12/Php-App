@@ -1,4 +1,5 @@
 <?php
+//geet the user to check 
     $userId = $_GET['user'];
     $query = "UPDATE tbl_report SET rpt_Checked = 1 WHERE ID ='$userId'";
     /*step 5 */

@@ -1,17 +1,20 @@
 <?php
   include("functions.php");
+  // calling functions
   if (!check_login()) {
       header('Location:login.php');
   }
+  //calling proccess
   include("editfish-process.php");
 
 
       if (!isset ($_GET["id"])){
           header("Location:fish.php");
       }
-
+      //getting the fish's ID
       $fish = get_fish($_GET['id']);
       $assoc = mysqli_fetch_assoc($fish);
+      //getting the description of that Specific Fish ID
       $description = file_get_contents("fish_descriptions/{$_GET['id']}.txt");
 
       if ($assoc == NULL) {

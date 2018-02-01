@@ -1,4 +1,5 @@
 <?php
+//calling the functions to this page
 include("functions.php");
 
 include("header.php");
@@ -15,11 +16,13 @@ include("header.php");
               <form enctype="multipart/form-data" action="login-process.php" method="post">
                     <div class="form-group">
                           <label for="input-user">Username:</label>
+                          <!--setting up the name attribute to accept the same name-->
                           <input type="text" class="form-control" name="userName"placeholder="Username"id="input-user">
                      </div>
 
                       <div class="form-group">
                           <label for="input-password">Password:</label>
+                          <!--setting up the name attribute to accept the same name-->
                           <input type="password" class="form-control"name="password" placeholder="password"id="input-password">
                             <a href="register.php">Register</a>
                       </div>

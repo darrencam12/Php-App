@@ -26,6 +26,7 @@
     	{
     		echo "Please select an image to upload.";
     	}
+      //image size limit
     	elseif ($imgsize > 40000000)
     	{
     		echo "The image you are trying to upload is too large.";

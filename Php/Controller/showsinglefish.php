@@ -1,15 +1,17 @@
 <?php
   include("functions.php");
+  // add functions to the page
   if (!check_login()) {
       header('Location:login.php');
   }
+  // add edit fish process
   include("editfish-process.php");
 
 
       if (!isset ($_GET["id"])){
           header("Location:fish.php");
       }
-
+// sets fish with id and displays the fish with that id
       $fish = get_fish($_GET['id']);
       $assoc = mysqli_fetch_assoc($fish);
       $description = file_get_contents("fish_descriptions/{$_GET['id']}.txt");
@@ -36,14 +38,17 @@
            </div>
            <div class="form-group">
                <label for="fishname">Name:</label>
+               <!--displays the value in the name-->
                 <input type="text" class="form-control" name="fishname" value="<?=$assoc["fsh_FishName"]?>">
             </div>
             <div class="form-group">
               <label for="fishsname">Scientific Name:</label>
+              <!--displays the value in the name-->
                 <input type="text"  class="form-control" name="fishsname" value="<?=$assoc["fsh_ScientificName"]?>" placeholder="Scientific Name">
             </div>
             <div class="form-group">
               <label for="forigin">Origin Of Fish:</label>
+              <!--displays the value in the origin-->
                 <input type="text" class="form-control" name="forigin" value="<?=$assoc["fsh_Origin"]?>" placeholder="Origin of fish">
               </div>
 
@@ -63,6 +68,7 @@
                        }
 
               ?>
+              <!--gets images depending the id-->
               <img src="<?=$images?>" class="FishImage"alt="img" id="imagesize">
 
               <div class="row">
@@ -70,6 +76,7 @@
                   <div class="checkboxspacing">
                     <div class="form-check">
                       <h5><strong>Danger of Fish</strong></h5>
+                      <!--if the checkbox is pressed than a value of 1 is given-->
                       <h5><?php if($assoc['fsh_Toxic'] == 1)echo "toxic";?></h5>
                       <h5><?php if($assoc['fsh_Venomous'] == 1)echo "Venomous";?></h5>
                       <div>

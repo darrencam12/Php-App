@@ -1,13 +1,14 @@
 <?php
+//add fucntions to this page
 include("functions.php");
 
 if (!check_login()) {
     header('Location:login.php');
 }
-
+//add the process to the page
 include("fish-process.php");
 
-
+// calling the function get_fish
 $getfish = get_fish();
 
 include("header.php");
@@ -37,6 +38,7 @@ include("header.php");
            </div>
 
            <?php
+           //loop for images
                 while ($assoc = mysqli_fetch_assoc($getfish)):
 
                     // retrieves all the images that match the criteria
@@ -55,6 +57,7 @@ include("header.php");
               </div>
               <div class="col-lg-3">
                 <div class="Fishcontainer">
+                  <!--display the images that are assigned a id-->
                   <img src="<?=$images?>" class="FishImage"alt="img">
                 <div class="fishname">
                   <h4>Name: <?=$assoc['fsh_FishName']?></h4>

@@ -1,15 +1,17 @@
 <?php
-include("header.php");
-include("functions.php");
 
+include("header.php");
+//including the header and fuctions pages to this current page
+include("functions.php");
+//checks the login progress if not met send the user to login.php
 if (!check_login()) {
     header('Location:login.php');
 }
 
-
+//setting a variable with a function
 $showreport = show_report();
 $showorders = show_orders();
-
+// setting a timestamp with a date format
 $timestamp = strtotime('2018-1-10');
  ?>
 
@@ -41,10 +43,12 @@ $timestamp = strtotime('2018-1-10');
                   </tr>
 
 <?php
+//used to loop the table in the page
   while ($assoc = mysqli_fetch_assoc($showreport)):
 ?>
 
                    <tr>
+                     <!-- the values that are going loop  -->
                        <td><?=$assoc['ID']?></td>
                        <td><?=$assoc['rpt_Name']?></td>
                        <td><?=$assoc['rpt_Surname']?></td>
@@ -82,10 +86,13 @@ $timestamp = strtotime('2018-1-10');
                   </tr>
 
 <?php
+//used to loop the table in the page
 while ($assoc = mysqli_fetch_assoc($showorders)):
 ?>
 
                   <tr>
+                    <!-- the values that are going loop  -->
+
                      <td><?=$assoc['idPoster']?></td>
                      <td><?=$assoc['ptr_Name']?></td>
                      <td><?=$assoc['ptr_Surname']?></td>
@@ -108,7 +115,7 @@ endwhile;
             </div>
           </div>
 
-              <!--this is the code for the button that will open and close the menu so keep to change for menu on top IMP!!!!-->
+              
 
             <?php
             include("footer.php");

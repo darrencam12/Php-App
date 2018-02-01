@@ -1,5 +1,5 @@
 <?php
-
+//get the function
 include "functions.php";
 
     //check if we re editing a book
@@ -13,7 +13,7 @@ include "functions.php";
     // delete any image file that matches the id
     $file = "uploaded_imgs/{$_GET["id"]}.*";
     array_map("unlink", glob($file));
-
+    //delte any file  that matches the id
     $file = "fish_descriptions/{$_GET["id"]}.*";
     array_map("unlink", glob($file));
 

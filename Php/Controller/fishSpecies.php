@@ -1,10 +1,11 @@
 <?php
+//add fucntions to this page
 include("functions.php");
 
 if (!check_login()) {
     header('Location:login.php');
 }
-
+// add process to this page
 include("fish-process.php");
 include("header.php");
  ?>
@@ -30,6 +31,7 @@ include("header.php");
 
           <div class="form-group">
               <label for="fishname">Name:</label>
+              <!--taking the value in this input and putting it in the variable & if it is empty give and error-->
               <input required type="text" class="form-control" name="fishname" placeholder="Fish name"
               value="<?php if(isset($_FORM['fishname'])) echo $_FORM['fishname']?>">
               <?php if (isset($_ERRORS['fishname'])): ?>
@@ -40,6 +42,7 @@ include("header.php");
             </div>
           <div class="form-group">
             <label for="fishsname">Scientific Name:</label>
+            <!--taking the value in this input and putting it in the variable & if it is empty give and error-->
             <input required type="text" class="form-control" name="fishsname"  placeholder="Scientific name"
             value="<?php if(isset($_FORM['fishsname'])) echo $_FORM['fishsname']?>">
             <?php if(isset($_ERRORS['fishsname'])): ?>
@@ -50,6 +53,7 @@ include("header.php");
           </div>
           <div class="form-group">
             <label for="forigin">Origin Of Fish:</label>
+            <!--taking the value in this input and putting it in the variable & if it is empty give and error-->
             <input required type="text" class="form-control" name="forigin" placeholder="Origin of fish"
              value="<?php if(isset($_FORM['forigin'])) echo $_FORM['forigin']?>">
              <?php if(isset($_ERRORS['forigin'])): ?>

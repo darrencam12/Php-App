@@ -3,18 +3,19 @@
   //$_ERRORS = array();
 
   //$_FORM = array();
-
+  //checks the request method POST
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     /*foreach ($_POST as $key => $value) {
       $_FORM[$key] = htmlspecialchars($value);
     }*/
 
+//posts the values in the variables
     $ptrname = $_POST['ptrname'];
     $ptrsurname = $_POST['ptrsurname'];
     $ptraddress = $_POST['ptraddress'];
 
-
+//calling the function insert_poster
     insert_poster($ptrname,$ptrsurname,$ptraddress);
 
   /*  if(empty($_ERRORS)){

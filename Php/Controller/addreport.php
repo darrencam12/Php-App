@@ -1,9 +1,10 @@
 <?php
+//including functions to this page
 include("functions.php");
 if (!check_login()) {
     header('Location:login.php');
 }
-
+//including the process to this page
 include("addreport-process.php");
 include("header.php");
 
@@ -35,7 +36,7 @@ include("header.php");
 
          <!-- Reports list-->
       <div class="container-fluid">
-
+          <!--getting the information from the input and sending that input to the database-->
           <form action="addreport.php" method="post" enctype="multipart/form-data">
             <a href="report.php"class="btn btn-default" id="posterbackbtn"><strong>Go Back</strong></a>
             <table class="table">
@@ -46,6 +47,7 @@ include("header.php");
                 </thead>
                 <tbody>
                   <tr>
+                    <!--getting the information from the input and sending that input to the database-->
                     <td>  <input required type="text" class="form-control" name="rptname" placeholder="name"
                       value="<?php if(isset($_FORM['rptname'])) echo $_FORM['rptname']?>"></td>
                   </tr>
@@ -55,6 +57,7 @@ include("header.php");
             </thead>
             <tbody>
               <tr>
+                <!--getting the information from the input and sending that input to the database-->
                 <td>  <input required type="text" class="form-control" name="rptsurname" placeholder="surname"
                   value="<?php if(isset($_FORM['rptsurname'])) echo $_FORM['rptsurname']?>"></td>
               </tr>
@@ -67,6 +70,7 @@ include("header.php");
                 </thead>
                 <tbody>
                   <tr>
+                    <!--getting the information from the input and sending that input to the database-->
                     <td><input required type="text" class="form-control" name="rptemail" placeholder="email"
                       value="<?php if(isset($_FORM['rptemail'])) echo $_FORM['rptemail']?>"></td>
                   </tr>
@@ -79,6 +83,7 @@ include("header.php");
                 </thead>
                 <tbody>
                   <tr>
+                    <!--getting the information from the input and sending that input to the database-->
                     <td><input required type="text" class="form-control" name="rptphoneno" placeholder="number"
                       value="<?php if(isset($_FORM['rptphoneno'])) echo $_FORM['rptphoneno']?>"></td>
                   </tr>
@@ -102,6 +107,7 @@ include("header.php");
                 </thead>
                 <tbody>
                   <tr>
+                    <!--getting the information from the input and sending that input to the database-->
                     <td> <input required type="text" class="form-control" name="rptdescrpition" placeholder="Fish name"
                       value="<?php if(isset($_FORM['rptdescrpition'])) echo $_FORM['rptdescrpition']?>"> </td>
                   </tr>
@@ -115,6 +121,7 @@ include("header.php");
                 </thead>
                 <tbody>
                   <tr>
+                    <!--getting the information from the input and sending that input to the database-->
                     <td><input required type="text" class="form-control" name="rptlocation" placeholder="Fish name"
                       value="<?php if(isset($_FORM['rptlocation'])) echo $_FORM['rptlocation']?>"></td>
                   </tr>

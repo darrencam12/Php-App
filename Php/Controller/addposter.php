@@ -1,9 +1,10 @@
 <?php
 include("functions.php");
+//including functions to this page
 if (!check_login()) {
     header('Location:login.php');
 }
-
+//including the process to this page
 include("addposter-process.php");
 include("header.php");
 
@@ -46,6 +47,7 @@ include("header.php");
                 </thead>
                 <tbody>
                   <tr>
+                    <!--getting the information from the input and sending that input to the database-->
                     <td>  <input required type="text" class="form-control" name="ptrname" placeholder="name"
                       value="<?php if(isset($_FORM['ptrname'])) echo $_FORM['ptrname']?>"></td>
                   </tr>
@@ -55,6 +57,7 @@ include("header.php");
             </thead>
             <tbody>
               <tr>
+                  <!--getting the information from the input and sending that input to the database-->
                 <td>  <input required type="text" class="form-control" name="ptrsurname" placeholder="surname"
                   value="<?php if(isset($_FORM['ptrsurname'])) echo $_FORM['ptrsurname']?>"></td>
               </tr>
@@ -67,6 +70,7 @@ include("header.php");
                 </thead>
                 <tbody>
                   <tr>
+                      <!--getting the information from the input and sending that input to the database-->
                     <td><input required type="text" class="form-control" name="ptraddress" placeholder="address"
                       value="<?php if(isset($_FORM['ptraddress'])) echo $_FORM['ptraddress']?>"></td>
                   </tr>

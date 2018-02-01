@@ -62,6 +62,7 @@
                         <tbody>
                         <?php foreach($archive as $user):?>
                             <tr>
+                              <!--displays the values that are in arrays-->
                               <td><?=$user[0]?></td>
                               <td><?=$user[1]?></td>
                               <td><?=$user[2]?></td>

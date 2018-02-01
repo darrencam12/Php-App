@@ -2,12 +2,13 @@
       $_ERRORS = array();
 
       $_FORM = array();
-
+  //checks the request method POST
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+        // for each post set it to the value
         foreach ($_POST as $key => $value) {
           $_FORM[$key] = htmlspecialchars($value);
         }
+        // creates varibles to with names
         $fishid = $_POST['fishid'];
         $fishname = $_POST['fishname'];
         $fishsname = $_POST['fishsname'];
@@ -17,7 +18,7 @@
         $description = $_POST['message'];
 
 
-
+        //checks if empty
         if(empty($_ERRORS)){
           $id = edit_fish($fishid, $fishname,$fishsname,$forigin,$ftoxic,$fvenomous);
 
@@ -25,7 +26,7 @@
             echo $id;
             die;
           }
-
+          //image upload
           if (isset($_FILES['file'])) {
 
               $file = "uploaded_imgs/{$fishid}.*";
@@ -41,6 +42,7 @@
               }
         }
       }
+      //file upload
       $myfile = fopen("fish_descriptions/$fishid.txt", "w") or die("Unable to create desciption");
       $txt = $description;
       fwrite($myfile,$txt);

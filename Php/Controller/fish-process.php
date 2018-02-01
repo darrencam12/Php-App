@@ -3,12 +3,13 @@
   $_ERRORS = array();
 
   $_FORM = array();
-
+// requesting method post
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     foreach ($_POST as $key => $value) {
       $_FORM[$key] = htmlspecialchars($value);
     }
+    //filling the variables with the values
     $fishname = $_POST['fishname'];
     $fishsname = $_POST['fishsname'];
     $forigin = $_POST['forigin'];
@@ -16,7 +17,7 @@
     if(isset($_POST['ftoxic'])) $ftoxic = 1; else $ftoxic = 0;
     if(isset($_POST['fvenomous'])) $fvenomous = 1; else $fvenomous = 0;
 
-
+// if there are no erros continue
     if(empty($_ERRORS)){
       $id = insert_fish($fishname,$fishsname,$forigin,$ftoxic,$fvenomous);
 
@@ -24,7 +25,7 @@
         echo $id;
         die;
       }
-
+//adding images
       if (isset($_FILES['file'])) {
 
           # fix the folder's permissions to allow upload
@@ -36,7 +37,7 @@
               die("Could not upload the image file.");
           }
 
-
+//adding files
       $myfile = fopen("fish_descriptions/$id.txt", "w") or die("Unable to create desciption");
       $txt = $message;
       fwrite($myfile,$txt);

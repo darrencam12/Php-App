@@ -4,12 +4,14 @@
 
   //$_FORM = array();
 
+  //checks the request method POST
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     /*foreach ($_POST as $key => $value) {
       $_FORM[$key] = htmlspecialchars($value);
     }*/
 
+//posts the values in the variables
     $rptname = $_POST['rptname'];
     $rptsurname = $_POST['rptsurname'];
     $rptemail = $_POST['rptemail'];
@@ -19,10 +21,11 @@
     $rptpreserved = 0;
     $rptdonate = 0;
   //  $message = $_POST['message'];
+  // if statemeent for checkboxs
     if(isset($_POST['rptpreserved'])) $rptpreserved = 1;
     if(isset($_POST['rptdonate'])) $rptdonate = 1;
 
-
+// calling the function
       insert_report($rptname,$rptsurname,$rptemail,$rptphoneno,$rptdescription,$rptlocation,$rptpreserved,$rptdonate);
 
   /*  if(empty($_ERRORS)){

@@ -1,5 +1,5 @@
 <?php
-
+// deletes the cookie
 foreach ($_COOKIE as $key => $value) {
         setcookie($key, NULL, time()-3600);
     }
