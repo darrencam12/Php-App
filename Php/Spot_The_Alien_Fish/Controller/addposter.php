@@ -38,7 +38,7 @@ include("header.php");
       <div class="container-fluid">
 
           <form action="addposter.php" method="post" enctype="multipart/form-data">
-            <a href="report.php"class="btn btn-default" id="posterbackbtn"><strong>Go Back</strong></a>
+            <a href="poster.php"class="btn btn-default" id="posterbackbtn"><strong>Go Back</strong></a>
             <table class="table">
                 <thead>
                   <tr>

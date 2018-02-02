@@ -5,12 +5,13 @@ function encode_image($image) {
     $data = file_get_contents($image);
     $base64 = 'data:image/' . $ext . ';base64,' . base64_encode($data);
 
-    return $base64;
+    return $base;
 }
 
   // this function will allow us to connect to the database and assign the connection to a variable
   function connect_to_db() {
-    $conn = mysqli_connect("localhost", "root", "", "db_fish_species")
+    //$conn = mysqli_connect("localhost", "root", "", "db_fish_species")
+    $conn = mysqli_connect("localhost", "icafesti_sptalfi", "_cqv)Bn!Z*yw", "icafesti_alienfish")
       or die("unable to connect");
 
       return $conn;

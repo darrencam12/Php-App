@@ -22,57 +22,57 @@
 <div class="pages">
     <div data-page="send_report"  class="page">
         <div class="page-content">
-            <form action="http://alienfish.dev/addreport.php" method="post" class="ajax-submit" id="order-form">
-            <div class="content-block">
+            <form action="http://alienfish.icafestival.com/addreport-process.php" method="post" class="ajax-submit" >
+                <div class="content-block">
 
-                <div class="row">
-                    <div class="col-100"><input type="text" name="rptname" placeholder="Name" required></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-100"><input type="text" name="rptsurname" placeholder="Surname" required></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-100"><input type="email" name="rptemail" placeholder="Email" required></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-100"><input type="number" name="rptphoneno" placeholder="Contact Number" required></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-100"><label for="input-picture">Upload photo of fish:</label></div>
-                    <div class="col-50" id="open-camera">
-                        <div style="color: #0b497c; padding:.5em"> <i class="fas fa-camera" >  </i> Take photo </div>
+                    <div class="row">
+                        <div class="col-100"><input type="text" name="rptname" placeholder="Name" required></div>
                     </div>
-                    <div class="col-50" id="open-gallery">
-                        <div style="color: #0b497c; padding:.5em"> <i class="fas fa-image" >  </i> Choose </div>
+
+                    <div class="row">
+                        <div class="col-100"><input type="text" name="rptsurname" placeholder="Surname" required></div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-50"> <img src="" id="camera-image" alt=""></div>
-                    <input type="file" name="image" id="image-upload" value="">
-                </div>
+                    <div class="row">
+                        <div class="col-100"><input type="email" name="rptemail" placeholder="Email" required></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-100"><input type="number" name="rptphoneno" placeholder="Contact Number" required></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-100"><label for="input-picture">Upload photo of fish:</label></div>
+                        <div class="col-50" id="open-camera">
+                            <div style="color: #0b497c; padding:.5em"> <i class="fas fa-camera" >  </i> Take photo </div>
+                        </div>
+                        <div class="col-50" id="open-gallery">
+                            <div style="color: #0b497c; padding:.5em"> <i class="fas fa-image" >  </i> Choose </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-50"> <img src="" id="camera-image" alt=""></div>
+
+                    </div>
 
 
-                <div class="row">
-                    <div class="col-100"><textarea name="rptdescrpition" rows="10" cols="24" placeholder="Describe the look of the fish" maxlength="300" ></textarea> </div>
-                </div>
+                    <div class="row">
+                        <div class="col-100"><textarea name="rptdescrpition" rows="10" cols="24" placeholder="Describe the look of the fish" maxlength="300" ></textarea> </div>
+                    </div>
 
 
 
-                <div class="row">
-                    <div class="col-100"><input type="text" name="rptlocation" placeholder="Location where fish was captured" required></div>
-                </div>
+                    <div class="row">
+                        <div class="col-100"><input type="text" name="rptlocation" placeholder="Location where fish was captured" required></div>
+                    </div>
 
-                <div class="row">
-                    <div class="col-50"><label for="input-frozen">Is fish frozen:</label></div>
-                    <div class="col-50">
-                        <div class="radio">
-                            <input type="radio" name="rptpreserved" value="yes"> Yes
-                            <input type="radio" name="rptpreserved" value="no"> No
+                    <div class="row">
+                        <div class="col-50"><label for="input-frozen">Is fish frozen:</label></div>
+                        <div class="col-50">
+                            <div class="radio">
+                                <input type="radio" name="rptpreserved" value="yes"> Yes
+                                <input type="radio" name="rptpreserved" value="no"> No
                         </div>
                     </div>
 

@@ -12,6 +12,9 @@ include 'functions.php';
         $image = "uploaded_imgs\defaultpic.jpg" ;
 
     }
-    $update['posterimg'] = encode_image($image);
+    $updates['posterimg'] = encode_image($image);
+
+    // print it all as JSON
+    echo json_encode($updates);
 
  ?>

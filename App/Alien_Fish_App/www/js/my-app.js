@@ -18,7 +18,7 @@ function FishList(data) {
     var template = $$('.template.fish-list')[0];
 
 
-    // we're going to loop through all the updates
+    // we're going to loop through all the fish
     // index will be a number, from 0 until the end
     for (var index in data) {
 
@@ -34,10 +34,7 @@ function FishList(data) {
         $$(update).find('.name').html(post['fsh_FishName']);
         $$(update).find('.fimg').attr('src', post['fishimg']);
 
-        //$$(update).find('.info').html(post['fsh_ScientificName']);
 
-        // the update content
-        //$$(update).find('.post-description').html(post['fsh_Origin']);
 
         // finally, pin this div to the bottom of the page content
         $$('.page-content').append(update);
@@ -59,7 +56,7 @@ function LoadFishList() {
     $$.getJSON(
         // first, specify the URL you want to load.
         // The update page. END WITH A COMMA
-        'http://alienfish.dev/update.php',
+        'http://alienfish.icafestival.com/update.php',
 
         // next, tell Javascript what will happen if everything goes well.
         // END WITH A COMMA after the close bracket
@@ -98,7 +95,7 @@ function GetFishFromList(id) {
 
 function LoadFish(id) {
 
-    var template = $$('.template.fish')[0];
+    var template = $$('.template.single_fish')[0];
     var fish = GetFishFromList(id);
     $$(template).find('.fishimg').attr('src', fish['fishimg']);
     $$(template).find('.fname').html(fish['fsh_FishName']);
@@ -151,7 +148,7 @@ myApp.onPageInit('send_report', function() {
 });
 
 myApp.onPageInit('fish_species', function() {
-    // load the timeline first, so every command is added to each post.
+    // load the fish.
     LoadFishList();
 
 
@@ -159,34 +156,27 @@ myApp.onPageInit('fish_species', function() {
 
 
 myApp.onPageInit('fish_page', function(page) {
-    //paramater
+
     LoadFish(page.query.id);
-    //loadfish(id);
-    //http://alienfish.dev/fish.php?id=1
+
 
 });
 
 myApp.onPageInit('order_poster', function() {
 
     // when the user presses send on the ajax form, we'll send the information
-    $$('form.ajax-submit').on('form:success', function(e) {
+    $$('#report-order').on('form:success', function(e) {
 
         // always try a JSON command.
         try {
             // put the server data into a variable
-            var data = JSON.parse(e.detail.data);
+            if (e.detail.data != '') {
+                alert(e.detail.data);
+            } else {
+                alert("Your order has been registered.");
 
-            // if the data exists, and it's an object
-            if (data && typeof data === "object") {
-
-                // store the form data
-                myApp.formStoreData('details', data);
-
-                // redirect the user to the timeline
-                mainView.router.loadPage({
-                    url: 'order_poster.html',
-                    reload: true
-                });
+                // redirect the user to the page
+                mainView.router.loadPage('index.html');
             }
         } catch (error) {
             // if an error was caught, show the error.
@@ -196,7 +186,6 @@ myApp.onPageInit('order_poster', function() {
 });
 
 myApp.onPageInit('send_report', function() {
-
     // when the user presses send on the ajax form, we'll send the information
     $$('#order-form').on('form:success', function(e) {
 
@@ -205,20 +194,11 @@ myApp.onPageInit('send_report', function() {
             // put the server data into a variable
             var data = JSON.parse(e.detail.data);
 
-            // if the data exists, and it's an object
-            if (data && typeof data === "object") {
-
-                // store the form data
-                myApp.formStoreData('details', data);
-
-                // redirect the user to the timeline
-                mainView.router.loadPage({
-                    url: 'send_report.html',
-                    reload: true
-                });
-
-                alert("yes");
-            }
+            // redirect the user to the page
+            mainView.router.loadPage({
+                url: 'send_report.html',
+                reload: true
+            });
         } catch (error) {
             // if an error was caught, show the error.
             alert("A problem was encountered:\n" + e.detail.data);

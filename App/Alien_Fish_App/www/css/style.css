@@ -73,10 +73,14 @@
 
 .fish p {
     color: #005B94;
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
-    margin: 1.4em 1em;
+    margin: 1em 1em;
     font-weight: 300;
+}
+
+.fish .name {
+    font-size: 1.2em;
 }
 
 .poster_img img {
@@ -101,11 +105,19 @@
     text-align: center;
 }
 
+.fish_names .sname {
+    font-style: italic;
+}
+
 .fish_info {
     color: #005B94;
     font-size: 1.2em;
     font-weight: 300;
     padding: .5em;
+}
+
+.fish_info .origin {
+    text-align: center;
 }
 
 .page[data-page="index"] .page-content {
@@ -173,6 +185,19 @@
     transition: background-color .1s ease-in-out;
 }
 
+.sd_btns {
+    font-size: 1.75em;
+    font-size-color: #ffffff;
+}
+
+.page[data-page="order_poster"] .page-content {
+    background-color: #ffffff;
+}
+
+.page[data-page="send_report"] .page-content {
+    background-color: #ffffff;
+}
+
 form .row {
     padding: 1em  0;
     text-align: left;
@@ -231,12 +256,4 @@ form .btn .button {
     color: #ffffff;
     background-color: #0b497c;
     font-size: 1.5em;
-}
-
-.page[data-page="order_poster"] .page-content {
-    background-color: #ffffff;
-}
-
-.page[data-page="send_report"] .page-content {
-    background-color: #ffffff;
 }

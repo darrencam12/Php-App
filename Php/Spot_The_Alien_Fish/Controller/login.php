@@ -24,7 +24,7 @@ include("header.php");
                           <label for="input-password">Password:</label>
                           <!--setting up the name attribute to accept the same name-->
                           <input type="password" class="form-control"name="password" placeholder="password"id="input-password">
-                            <a href="register.php">Register</a>
+                            <!--<a href="register.php">Register</a>-->
                       </div>
 
                   <button type="submit"class="btn btn-primary ">login</button>

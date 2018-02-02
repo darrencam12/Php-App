@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="edu.mcast.alienfish" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="edu.mcast.alienfish" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Spot The Alien Fish</name>
     <description>
         Spot the Alien Fish is an informative app on alien fish species that can be found mainly around the Maltese waters and the Mediterranean.
@@ -7,7 +7,7 @@
         Features on app Spot the Alien Fish app include:
 	        Getting information on each alien fish species.
 	        Sending a report if a fish was sighted or captured.
-            Sending an image with the report of the captured fish.
+            Sending an image with the report of the captured or sighted fish.
 	        Ordering a poster on the different alien fish species.
 
     </description>
