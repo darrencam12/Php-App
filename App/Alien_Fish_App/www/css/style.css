@@ -58,22 +58,26 @@
     height: 1.2em;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .fish {
     display: flex;
     padding: .5em 1em;
     background-color: #A4D7F2;
-    margin: 1em 0;
+    margin: 0 0 1em;
 }
 
 .fish img {
     display: block;
-    width: 50%;
-    height: 50%;
+    width: 45%;
 }
 
 .fish p {
     color: #005B94;
     font-size: 1em;
+    flex: 1;
     text-align: center;
     margin: 1em 1em;
     font-weight: 300;
@@ -94,8 +98,7 @@
 }
 
 .fish_img img {
-    width: 90%;
-    padding: 1em 1.25em;
+    width: 100%;
 }
 
 .fish_names {
@@ -143,9 +146,8 @@
 }
 
 .aboutimg img {
-    padding-left: 6.5em;
-    padding-right: 6.5em;
-    width: 50%;
+    display: block;
+    width: 100%;
 }
 
 .abouthead {
@@ -155,9 +157,8 @@
 }
 
 .simg img {
+    display: block;
     width: 100%;
-    padding-left: 5em;
-    padding-right: 5em;
 }
 
 .simg .uni {
@@ -199,12 +200,11 @@
 }
 
 form .row {
-    padding: 1em  0;
     text-align: left;
     font-size: 1.5em;
     font-weight: 300;
     color: #0b497c;
-    margin-right: .5em;
+    margin: 0 0.5em 0.5em 0;
 }
 
 form .row img {
@@ -218,6 +218,8 @@ form .row textarea {
     color: #005b94;
     border: 1.5px solid #0b497c;
     border-radius: 8px;
+    width: 100%;
+    padding: 0.5em;
 }
 
 form .row input {
@@ -230,7 +232,6 @@ form .row input {
     border-radius: 8px;
     padding: .25em 0 .25em .25em;
     width: 100%;
-    height: 1em;
 }
 
 form .row ::placeholder {

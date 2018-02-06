@@ -56,7 +56,7 @@ function LoadFishList() {
     $$.getJSON(
         // first, specify the URL you want to load.
         // The update page. END WITH A COMMA
-        'http://alienfish.icafestival.com/update.php',
+        'http://alienfish.dev/update.php',
 
         // next, tell Javascript what will happen if everything goes well.
         // END WITH A COMMA after the close bracket
@@ -103,9 +103,40 @@ function LoadFish(id) {
     $$(template).find('.origin').html(fish['fsh_Origin']);
     $$(template).find('.info').html(fish['fish_description']);
 
+    var toxic = "This fish is " + ((fish['fsh_Toxic'] == 0) ? "not " : "") + " toxic.";
+    $$(template).find('.venom.toxic').html(toxic);
 
+    var venomous = "This fish is " + ((fish['fsh_Venomous'] == 0) ? "not " : "") + " venomous.";
+    $$(template).find('.venom.venomous').html(venomous);
 
+}
 
+// This function will load the timeline contents.
+function LoadPoster() {
+
+    // this line finds the update template.
+    // the [0] makes sure this is not a Framework7 object.
+    var template = $$('.template.pimg')[0];
+
+    // here, we do everything we need
+    $$.getJSON(
+        // first, specify the URL you want to load.
+        // The update page. END WITH A COMMA
+        'http://alienfish.dev/poster-process-update.php',
+
+        // next, tell Javascript what will happen if everything goes well.
+        // END WITH A COMMA after the close bracket
+        function(data) {
+            $$(template).attr('src', data['posterimg']);
+        },
+
+        // tell Javascript what should happen if something goes wrong
+        function(xhr, status) {
+
+            // a simple alert giving us the root of the problem
+            alert('Could not load poster:' + status);
+        }
+    );
 
 }
 
@@ -117,6 +148,7 @@ $$(document).on('deviceready', function() {
 });
 
 myApp.onPageInit('send_report', function() {
+
     $$('#open-camera').click(function(){
         navigator.camera.getPicture(
             function(imageURI){
@@ -145,9 +177,24 @@ myApp.onPageInit('send_report', function() {
             }
         );
     });
+
+    $$('form.ajax-submit').on('form:success', function(e) {
+        var response = e.detail.data;
+
+        if (response == "1") {
+            alert("Your report was submitted.");
+            mainView.router.loadPage('fish_species.html');
+        } else {
+            alert(response);
+        }
+    });
+
+    $$('form.ajax-submit').on('form:error', function(e) {
+        alert(e.detail.data);
+    });
 });
 
-myApp.onPageInit('fish_species', function() {
+myApp.onPageInit('fish_species', function(page) {
     // load the fish.
     LoadFishList();
 
@@ -164,49 +211,27 @@ myApp.onPageInit('fish_page', function(page) {
 
 myApp.onPageInit('order_poster', function() {
 
+    alert("order_poster");
+    LoadPoster();
+
     // when the user presses send on the ajax form, we'll send the information
-    $$('#report-order').on('form:success', function(e) {
+    $$('form.ajax-submit').on('form:success', function(e) {
+        var response = e.detail.data;
 
-        // always try a JSON command.
-        try {
-            // put the server data into a variable
-            if (e.detail.data != '') {
-                alert(e.detail.data);
-            } else {
-                alert("Your order has been registered.");
-
-                // redirect the user to the page
-                mainView.router.loadPage('index.html');
-            }
-        } catch (error) {
-            // if an error was caught, show the error.
-            alert("A problem was encountered:\n" + e.detail.data);
+        if (response == "1") {
+            alert("Your poster was ordered.");
+            mainView.router.loadPage('fish_species.html');
+        } else {
+            alert(response);
         }
     });
-});
 
-myApp.onPageInit('send_report', function() {
-    // when the user presses send on the ajax form, we'll send the information
-    $$('#order-form').on('form:success', function(e) {
+    $$('form.ajax-submit').on('form:error', function(e) {
+        alert(e.detail.data);
 
-        // always try a JSON command.
-        try {
-            // put the server data into a variable
-            var data = JSON.parse(e.detail.data);
 
-            // redirect the user to the page
-            mainView.router.loadPage({
-                url: 'send_report.html',
-                reload: true
-            });
-        } catch (error) {
-            // if an error was caught, show the error.
-            alert("A problem was encountered:\n" + e.detail.data);
-        }
     });
 });
-
-
 
 
 // Now we need to run the code that will be executed only for About page.

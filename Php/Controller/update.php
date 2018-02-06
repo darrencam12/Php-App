@@ -12,16 +12,16 @@
         if (count($image) >0) {
             $image = $image[0];
         } else {
-            $image = "uploaded_imgs\defaultpic.jpg" ;
+            $image = "uploaded_imgs/defaultpic.jpg" ;
 
         }
-        $update['fishimg'] = encode_image($image);
+        $update['fishimg'] = "http://alienfish.icafestival.com/$image";
 
     }
 
     foreach ($updates as &$update) {
         $textfile = "fish_descriptions/{$update['id']}.txt";
-        $update['fish_description'] = file_exists($textfile) ? file_get_contents($textfile) : '';
+        $update['fish_description'] = file_exists($textfile) ? htmlspecialchars(file_get_contents($textfile)) : '';
     }
 
 

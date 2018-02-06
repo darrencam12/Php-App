@@ -22,7 +22,8 @@
 <div class="pages">
     <div data-page="send_report"  class="page">
         <div class="page-content">
-            <form action="http://alienfish.icafestival.com/addreport-process.php" method="post" class="ajax-submit" >
+            <!--http://alienfish.icafestival.com-->
+            <form action="http://alienfish.dev/mobile/addreport-process.php" method="post" class="ajax-submit" >
                 <div class="content-block">
 
                     <div class="row">
@@ -58,7 +59,7 @@
 
 
                     <div class="row">
-                        <div class="col-100"><textarea name="rptdescrpition" rows="10" cols="24" placeholder="Describe the look of the fish" maxlength="300" ></textarea> </div>
+                        <div class="col-100"><textarea name="rptdescrpition" rows="10" cols="24" placeholder="Describe the look of the fish" maxlength="300" required ></textarea> </div>
                     </div>
 
 
@@ -69,41 +70,41 @@
 
                     <div class="row">
                         <div class="col-50"><label for="input-frozen">Is fish frozen:</label></div>
+                            <div class="col-50">
+                                <div class="radio">
+                                    <input type="radio" name="rptpreserved" value="1"> Yes
+                                    <input type="radio" name="rptpreserved" value="0" checked> No
+                                </div>
+                            </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-100">
+                            <label for="input-donation">Are you willing to donate or sell
+                            the fish you caught to the University:</label>
+                        </div>
+
+                        <div class="col-50"></div>
                         <div class="col-50">
                             <div class="radio">
-                                <input type="radio" name="rptpreserved" value="yes"> Yes
-                                <input type="radio" name="rptpreserved" value="no"> No
+                                <input type="radio" name="rptdonate" value="1"> Yes
+                                <input type="radio" name="rptdonate" value="0" checked> No
+                            </div>
                         </div>
+
                     </div>
 
-                </div>
 
-
-                <div class="row">
-                    <div class="col-100">
-                        <label for="input-donation">Are you willing to donate or sell
-                        the fish you caught to the University:</label>
+                    <div class="btn">
+                        <div class="col-100"><button type="submit" class="button button-big button-fill">Submit</button></div>
                     </div>
 
-                    <div class="col-50"></div>
-                    <div class="col-50">
-                        <div class="radio">
-                            <input type="radio" name="rptdonate" value="yes"> Yes
-                            <input type="radio" name="rptdonate" value="no"> No
-                        </div>
-                    </div>
+
 
                 </div>
-
-
-                <div class="btn">
-                    <div class="col-100"><input type="submit" class="button button-big button-fill" value="Submit"></div>
-                </div>
-
-
-
-                </form>
-            </div>
+            </form>
         </div>
     </div>
 </div>

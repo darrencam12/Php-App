@@ -15,7 +15,7 @@
    include("header.php");
 
 
-      $conn = mysqli_connect("localhost", "icafesti_sptalfi", "_cqv)Bn!Z*yw", "icafesti_alienfish")
+      $conn = mysqli_connect("localhost", "root", "", "db_fish_species")
         or die("unable to connect");
 
 
