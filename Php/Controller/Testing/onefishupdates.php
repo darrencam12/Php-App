@@ -3,7 +3,7 @@
     header('Access-Control-Allow-Origin: *');
 
     // include the functions file
-    include 'functions.php';
+    include '../functions.php';
 
     // put all the information into one huge associative array
     $updates = get_all_fish();

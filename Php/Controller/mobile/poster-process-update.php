@@ -2,11 +2,11 @@
 // allow access from the mobile app
 header('Access-Control-Allow-Origin: *');
 
-    $image = glob("uploaded_imgs/poster.*");
+    $image = glob("../poster_imgs/poster.*");
     if (count($image) >0) {
         $image = $image[0];
     } else {
-        $image = "uploaded_imgs/defaultpic.jpg" ;
+        $image = "../uploaded_img/defaultpic.jpg" ;
 
     }
     $updates['posterimg'] = "http://alienfish.icafestival.com/$image";

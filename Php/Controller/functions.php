@@ -18,8 +18,8 @@ function encode_image($image) {
 
   // this function will allow us to connect to the database and assign the connection to a variable
   function connect_to_db() {
-    //$conn = mysqli_connect("localhost", "root", "", "db_fish_species")
     $conn = mysqli_connect("localhost", "root", "", "db_fish_species")
+    //$conn = mysqli_connect("localhost", "icafesti_sptalfi", "_cqv)Bn!Z*yw", "icafesti_alienfish")
       or die("unable to connect");
 
       return $conn;
