@@ -9,8 +9,8 @@
 }
 
 .views .navbar-inner p {
-    font-size: 1.55em;
-    font-weight: 300;
+    font-size: 1.1em;
+    font-weight: normal;
 }
 
 .views .page-content {
@@ -67,11 +67,12 @@
     padding: .5em 1em;
     background-color: #A4D7F2;
     margin: 0 0 1em;
+    align-items: center;
 }
 
 .fish img {
     display: block;
-    width: 45%;
+    width: 50%;
 }
 
 .fish p {
@@ -80,16 +81,12 @@
     flex: 1;
     text-align: center;
     margin: 1em 1em;
-    font-weight: 300;
+    font-weight: normal;
 }
 
 .fish .name {
     font-size: 1.2em;
-}
-
-.poster_img img {
-    width: 90%;
-    padding: 1em 1.25em;
+    text-transform: uppercase;
 }
 
 .row img {
@@ -102,25 +99,69 @@
 }
 
 .fish_names {
-    color: #005B94;
+    padding: .5em 0 1.5em 0;
+    margin-bottom: 1em;
+}
+
+.fish_names .fname {
+    color: #0b497c;
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: 500;
+    text-transform: uppercase;
     text-align: center;
+    margin: 0;
+    margin-top: .5em;
+    margin-bottom: .3em;
 }
 
 .fish_names .sname {
     font-style: italic;
+    color: #A4D7F2;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+.venom {
+    color: #005B94;
+    font-size: 1.1em;
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+}
+
+.venomous {
+    margin-bottom: 1em;
 }
 
 .fish_info {
+    margin: 0;
     color: #005B94;
+    font-weight: normal;
+}
+
+.fish_info .oname {
+    margin: 0;
     font-size: 1.2em;
-    font-weight: 300;
-    padding: .5em;
 }
 
 .fish_info .origin {
-    text-align: center;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+
+.fish_info .iname {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.fish_info .info {
+    margin: 0;
+    font-size: 1.1em;
 }
 
 .page[data-page="index"] .page-content {
@@ -128,16 +169,15 @@
 }
 
 .home img {
-    margin-top: 4em;
-    width: 90%;
-    padding: 1em 1.25em;
+    margin-top: 3em;
+    width: 100%;
 }
 
 .home p {
     font-size: 2.5em;
     text-align: center;
     color: #005B94;
-    font-weight: 300;
+    font-weight: normal;
 }
 
 .aboutinfo {
@@ -202,9 +242,10 @@
 form .row {
     text-align: left;
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: normal;
     color: #0b497c;
-    margin: 0 0.5em 0.5em 0;
+    margin-bottom: .5em;
+    margin-top: .5em;
 }
 
 form .row img {
@@ -226,7 +267,7 @@ form .row input {
     background-color: #ffffff;
     color: #005b94;
     font-size: 1em;
-    font-weight: 300;
+    font-weight: normal;
     border: none;
     border: 1.5px solid #0b497c;
     border-radius: 8px;
@@ -237,7 +278,7 @@ form .row input {
 form .row ::placeholder {
     color: #005b94;
     font-size: 1em;
-    font-weight: 300;
+    font-weight: normal;
 }
 
 form .row i {
@@ -251,10 +292,15 @@ form .row .radio {
 
 form .btn .button {
     border-radius: 10px;
-    font-weight: 300;
+    font-weight: normal;
     padding: 0;
     padding-bottom: 1em;
     color: #ffffff;
     background-color: #0b497c;
     font-size: 1.5em;
+    width: 100%;
+}
+
+.pimg {
+    width: 100%;
 }
