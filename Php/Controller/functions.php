@@ -495,7 +495,6 @@ function insert_report($rptname,$rptsurname,$rptemail,$rptphoneno,$rptdescriptio
 
   $conn = connect_to_db();
 
-
   // protecting the variables for injection
   $rptname = mysqli_escape_string($conn,$rptname);
   $rptsurname = mysqli_escape_string($conn,$rptsurname);
@@ -505,13 +504,14 @@ function insert_report($rptname,$rptsurname,$rptemail,$rptphoneno,$rptdescriptio
   $rptlocation = mysqli_escape_string($conn,$rptlocation);
   $rptpreserved = mysqli_escape_string($conn,$rptpreserved);
   $rptdonate = mysqli_escape_string($conn,$rptdonate);
+  $now = mysqli_escape_string($conn, time());
 
   // 3. define a query
   $query ="
   INSERT INTO tbl_report
-    (rpt_Name, rpt_Surname, rpt_Email,rpt_PhoneNo, rpt_descrpition, rpt_Location,rpt_Preserved ,rpt_Donate)
+    (rpt_Name, rpt_Surname, rpt_Email,rpt_PhoneNo, rpt_descrpition, rpt_Location,rpt_Preserved ,rpt_Donate, rpt_Date)
   VALUES
-    ('{$rptname}','{$rptsurname}','{$rptemail}','{$rptphoneno}','{$rptdescription}','{$rptlocation}','{$rptpreserved}','{$rptdonate}')
+    ('{$rptname}','{$rptsurname}','{$rptemail}','{$rptphoneno}','{$rptdescription}','{$rptlocation}','{$rptpreserved}','{$rptdonate}', '{$now}')
     ";
     // 4. ask SQL to perform the query
   $result = mysqli_query($conn, $query);

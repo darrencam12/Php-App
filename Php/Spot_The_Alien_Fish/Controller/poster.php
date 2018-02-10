@@ -14,7 +14,7 @@ include('upload.php');
 
 <?php
     // retrieves all the images that match the criteria
-      $images = glob("uploaded_imgs/poster.*");
+      $images = glob("poster_imgs/poster.*");
 
       // if there are any images on the disk, we can use it.
       if (count($images) > 0) {
