@@ -56,7 +56,7 @@ function LoadFishList() {
     $$.getJSON(
         // first, specify the URL you want to load.
         // The update page. END WITH A COMMA
-        'http://alienfish.dev/update.php',
+        'http://alienfish.icafestival.com/update.php',
 
         // next, tell Javascript what will happen if everything goes well.
         // END WITH A COMMA after the close bracket
@@ -103,10 +103,10 @@ function LoadFish(id) {
     $$(template).find('.origin').html(fish['fsh_Origin']);
     $$(template).find('.info').html(fish['fish_description']);
 
-    var toxic = "This fish is " + ((fish['fsh_Toxic'] == 0) ? "not " : "") + " toxic.";
+    var toxic = "This fish is " + ((fish['fsh_Toxic'] == 0) ? "Not " : "") + " Toxic.";
     $$(template).find('.venom.toxic').html(toxic);
 
-    var venomous = "This fish is " + ((fish['fsh_Venomous'] == 0) ? "not " : "") + " venomous.";
+    var venomous = "This fish is " + ((fish['fsh_Venomous'] == 0) ? "Not " : "") + " Venomous.";
     $$(template).find('.venom.venomous').html(venomous);
 
 }
@@ -122,7 +122,7 @@ function LoadPoster() {
     $$.getJSON(
         // first, specify the URL you want to load.
         // The update page. END WITH A COMMA
-        'http://alienfish.dev/poster-process-update.php',
+        'http://alienfish.icafestival.com/mobile/poster-process-update.php',
 
         // next, tell Javascript what will happen if everything goes well.
         // END WITH A COMMA after the close bracket
