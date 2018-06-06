@@ -22,7 +22,7 @@ $showreport = show_report($_GET['user']);
 
 <?php
           while ($assoc = mysqli_fetch_assoc($showreport)):
-            $images = glob("report_images/{$assoc['ID']}.*");
+            $images = glob("uploaded_imgs/{$assoc['ID']}.*");
             if(count($images)== 0 ){
               $images = "defaultpic.jpg";
             }else{

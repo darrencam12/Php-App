@@ -1,12 +1,12 @@
 <?php
-include("../functions.php");
+include("functions.php");
 //including functions to this page
 if (!check_login()) {
     header('Location:login.php');
 }
 //including the process to this page
-include("../addposter-process.php");
-include("../header.php");
+include("addposter-process.php");
+include("header.php");
 
 
 

@@ -1,25 +1,17 @@
 <?php
 
-function fetch_all($object) {
-    $result = array();
-    while ($assoc = mysqli_fetch_assoc($object)) {
-        $result[] = $assoc;
-    }
-    return $result;
-}
-
 function encode_image($image) {
     $ext = pathinfo($image, PATHINFO_EXTENSION);
     $data = file_get_contents($image);
     $base64 = 'data:image/' . $ext . ';base64,' . base64_encode($data);
 
-    return $base64;
+    return $base;
 }
 
   // this function will allow us to connect to the database and assign the connection to a variable
   function connect_to_db() {
-    $conn = mysqli_connect("localhost", "root", "", "db_fish_species")
-    //$conn = mysqli_connect("localhost", "icafesti_sptalfi", "_cqv)Bn!Z*yw", "icafesti_alienfish")
+    //$conn = mysqli_connect("localhost", "root", "", "db_fish_species")
+    $conn = mysqli_connect("localhost", "icafesti_sptalfi", "_cqv)Bn!Z*yw", "icafesti_alienfish")
       or die("unable to connect");
 
       return $conn;
@@ -334,7 +326,7 @@ function encode_image($image) {
       // 3. define the query
       $query = "
           SELECT
-              id, user_name
+              *
           FROM
               tbl_users
           WHERE
@@ -480,7 +472,7 @@ function encode_image($image) {
     disconnect_from_db($conn);
 
     // give back the end result
-    return fetch_all($result);
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
 
   }
 
